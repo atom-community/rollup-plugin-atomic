@@ -25,12 +25,12 @@ You should also install the peer dependencies:
 Create a `rollup.config.js` file at the root of the project with the following content. See API section for more details
 
 ```js
-const { createPlugins, createConfig } = requore("rollup-plugin-atomic");
+const { createPlugins, createConfig } = require("rollup-plugin-atomic");
 
-const plugins = createPlugins(["js"], true);
+const plugins = createPlugins(["ts", "js"], true);
 
 const config = createConfig(
-  "src/x-terminal.js",
+  "src/main.ts",
   "dist",
   "cjs",
   ["atom", "electron", "node-pty-prebuilt-multiarch"],
@@ -66,4 +66,25 @@ createConfig(
 You can create multiple configs using `createConfig` and export them as an array:
 ```js
 module.exports = [config1, config2]
+```
+
+## Only using createPlugins:
+
+you can only use `createPlugins` and then export your config with the typical rollup style:
+```js
+const { createPlugins } = require("rollup-plugin-atomic");
+
+const plugins = createPlugins(["ts", "js"], true);
+
+module.exports = {
+    input: "src/main.ts",
+    output: [
+      {
+        dir: "dist",
+        format: "cjs",
+        sourcemap: true,
+      },
+    ],
+    plugins: plugins,
+}
 ```
