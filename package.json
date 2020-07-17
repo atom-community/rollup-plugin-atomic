@@ -4,7 +4,11 @@
   "version": "0.1.0",
   "author": "Amin Yahyaabadi",
   "description": "Rollup plugin used in atom-ide-community",
-  "keywords": ["rollup", "plugin", "atomic"],
+  "keywords": [
+    "rollup",
+    "plugin",
+    "atomic"
+  ],
   "repository": "https://github.com/atom-ide-community/rollup-plugin-atomic",
   "license": "MIT",
   "scripts": {
@@ -15,9 +19,6 @@
     "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {
-    "typescript": "^3.9.7",
-    "coffeescript": "^1.12.7",
-    "@babel/core": "^7.10.5",
     "tslib": "^2.0.0",
     "@rollup/plugin-commonjs": "14.0.0",
     "@rollup/plugin-node-resolve": "8.4.0",
