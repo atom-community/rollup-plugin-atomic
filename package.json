@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Amin Yahyaabadi",
   "description": "Rollup plugin used in atom-ide-community",
-  "keywords": [],
+  "keywords": ["rollup", "plugin", "atomic"],
   "repository": "https://github.com/atom-ide-community/rollup-plugin-atomic",
   "license": "MIT",
   "scripts": {
