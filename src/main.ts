@@ -12,22 +12,7 @@ export function createPlugins(
   babel: boolean = true,
   extraPlugins?: Array<any>
 ) {
-  let plugins = [
-    autoExternal({
-      builtins: true,
-      dependencies: false,
-      peerDependencies: false,
-    }),
-
-    // so Rollup can find externals
-    resolve({
-      extensions: [".ts", ".js", ".coffee", ".tsx", ".jsx", ".mjs"],
-      preferBuiltins: true,
-    }),
-
-    // so Rollup can convert externals to an ES module
-    commonjs(),
-  ];
+  let plugins = []
 
   // language specific
   // typescript
@@ -89,6 +74,25 @@ export function createPlugins(
   if (extraPlugins) {
     plugins.push(...extraPlugins);
   }
+
+  let pluginsCommon = [
+    autoExternal({
+      builtins: true,
+      dependencies: false,
+      peerDependencies: false,
+    }),
+
+    // so Rollup can find externals
+    resolve({
+      extensions: [".ts", ".js", ".coffee", ".tsx", ".jsx", ".mjs"],
+      preferBuiltins: true,
+    }),
+
+    // so Rollup can convert externals to an ES module
+    commonjs(),
+  ];
+
+  plugins.push(...pluginsCommon)
 
   // minify only in production mode
   if (process.env.NODE_ENV === "production") {
