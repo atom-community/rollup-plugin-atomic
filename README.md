@@ -13,7 +13,7 @@ You should also install the peer dependencies:
 ```
 "rollup": "2.21.0",
 ```
-
+and the following (only those that you use are needed):
 ```
 "typescript": "^3.9.6",
 "coffeescript": "^1.12.7",
