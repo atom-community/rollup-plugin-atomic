@@ -33,7 +33,10 @@
     "array-includes-any": "^2.7.3"
   },
   "peerDependencies": {
-    "rollup": "2.21.0"
+    "rollup": "2.21.0",
+    "typescript": "^3.9.6",
+    "coffeescript": "^1.12.7",
+    "@babel/core": "^7.10.5"
   },
   "devDependencies": {
     "typescript": "^3.9.6",
