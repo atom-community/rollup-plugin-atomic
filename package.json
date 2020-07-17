@@ -12,10 +12,10 @@
     "tsc": "tsc -p src/tsconfig.json || echo done",
     "build": "npm run tsc",
     "prepare": "npm run build",
-    "bump": "ncu -u"
+    "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "coffeescript": "^1.12.7",
     "@babel/core": "^7.10.5",
     "tslib": "^2.0.0",
@@ -34,14 +34,14 @@
   },
   "peerDependencies": {
     "rollup": "2.21.0",
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "coffeescript": "^1.12.7",
     "@babel/core": "^7.10.5"
   },
   "devDependencies": {
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "rollup": "2.21.0",
     "prettier": "^2.0.5",
-    "npm-check-updates": "7.0.1"
+    "npm-check-updates": "7.0.2"
   }
 }
