@@ -58,6 +58,7 @@ createPlugins(
 ```
 
 which `inputPlugins` is among these:
+
 ```
 ts
 babel
@@ -68,6 +69,7 @@ css
 ```
 
 You can pass an input plugin with their supported option:
+
 ```js
 createPlugins(["ts", {noEmitOnError: false, tsconfig: "./lib/tsconfig.json"})
 ```

@@ -136,7 +136,7 @@ export function createPlugins(
   }
 
   // babel
-  let babelInput = extraPlugins
+  let babelInput = extraPlugins;
   if (typeof babelInput === "boolean") {
     console.warn(
       'Setting babel with the second argument is depcrated. Pass "babel" like other plugins to the first argument'
