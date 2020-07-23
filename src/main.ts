@@ -7,6 +7,41 @@ import { terser } from "rollup-plugin-terser";
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external";
 
+export type Plugin =
+  | "js"
+  | "ts"
+  | "coffee"
+  | "json"
+  | "css"
+  | "babel"
+  | ["ts", typeof typescript]
+  | ["babel", typeof babel]
+  | ["coffee", typeof coffeescript]
+  | ["json", typeof json]
+  | ["css", typeof cssOnly];
+
+// function to check if the first array has any of the second array
+// first array can have `[string, object]` as their input
+function includesAny(
+  arr1: Array<string | [string, Object]>,
+  arr2: Array<string>
+): null | number {
+  for (let index = 0; index < arr1.length; index++) {
+    const elm = arr1[index];
+    let name: string;
+    if (typeof elm === "string") {
+      // plugin name only
+      name = elm;
+    } else {
+      // plugin with options
+      name = elm[0];
+    }
+    if (arr2.includes(name)) {
+      return index;
+    }
+  }
+  return null;
+}
 export function createPlugins(
   languages: Array<string> = ["ts", "js", "json", "coffee"],
   babel: boolean = true,
