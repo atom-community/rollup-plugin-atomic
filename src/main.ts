@@ -7,6 +7,12 @@ import { terser } from "rollup-plugin-terser";
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external";
 
+import typescript from "@rollup/plugin-typescript";
+import coffeescript from "rollup-plugin-coffee-script";
+import json from "@rollup/plugin-json";
+import cssOnly from "rollup-plugin-css-only";
+import babel from "@rollup/plugin-babel";
+
 export type Plugin =
   | "js"
   | "ts"
