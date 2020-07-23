@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
-    "tsc": "tsc -p src/tsconfig.json",
+    "tsc": "tsc -p src/tsconfig.json || echo done",
     "build": "npm run tsc",
     "prepare": "npm run build",
     "bump": "ncu -u -x coffeescript"
