@@ -53,7 +53,7 @@ use `createPlugins` to create the plugins you need.
 ```ts
 createPlugins(
   inputPlugins: Array<Plugin> = ["ts", "babel", "json", "coffee"], // languages/plugins you use
-  extraPlugins?: Array<any>	// pass any extra plugins functions like `multientry()`
+  extraPlugins?: Array<any>	// pass any extra plugins functions as an array like `[multientry()]`
 )
 ```
 
@@ -77,7 +77,7 @@ createPlugins(["ts", {noEmitOnError: false, tsconfig: "./lib/tsconfig.json"})
 For adding extra plugins, you can:
 ```ts
 import multyentry from '@rollup/plugin-multi-entry'
-createPlugins(["ts", multyentry())
+createPlugins(["ts", [multyentry()])
 ```
 
 ### createConfig

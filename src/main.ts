@@ -165,11 +165,21 @@ export function createPlugins(
 
   // extra plugins
   if (typeof extraPlugins !== "boolean" && extraPlugins !== undefined) {
-    plugins.push(...extraPlugins);
+    try {
+      plugins.push(...extraPlugins);
+    }
+    catch (e) {
+      console.error("You should pass extraPlugins as an array")
+    }
   }
 
   if (extraPluginsDeprecated) {
-    plugins.push(...extraPluginsDeprecated);
+    try {
+      plugins.push(...extraPluginsDeprecated);
+    }
+    catch (e) {
+      console.error("You should pass extraPluginsDeprecated as an array")
+    }
   }
 
   let pluginsCommon = [
