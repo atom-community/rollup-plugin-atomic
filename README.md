@@ -29,7 +29,7 @@ Create a `rollup.config.js` file at the root of the project with the following c
 ```js
 const { createPlugins } = require("rollup-plugin-atomic");
 
-const plugins = createPlugins(["ts", "js"], true);
+const plugins = createPlugins(["ts", "babel"]);
 
 module.exports = {
   input: "src/main.ts",
@@ -74,6 +74,12 @@ You can pass an input plugin with their supported option:
 createPlugins(["ts", {noEmitOnError: false, tsconfig: "./lib/tsconfig.json"})
 ```
 
+For adding extra plugins, you can:
+```ts
+import multyentry from '@rollup/plugin-multi-entry'
+createPlugins(["ts", multyentry())
+```
+
 ### createConfig
 
 You can use `createConfig` to create the configs you need. This is a simple wrapper around the rollup config.
@@ -93,7 +99,7 @@ An example that uses `createConfig`:
 ```js
 const { createPlugins, createConfig } = require("rollup-plugin-atomic");
 
-const plugins = createPlugins(["ts", "js"]);
+const plugins = createPlugins(["ts", "babel"]);
 
 const config = createConfig(
   "src/main.ts",
