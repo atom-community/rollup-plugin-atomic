@@ -70,6 +70,7 @@ export function createPlugins(
       plugins.push(
         typescript({
           noEmitOnError: false,
+          module: "ESNext" // do not modify the imports
         })
       );
     } else {
