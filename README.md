@@ -70,8 +70,11 @@ css
 
 You can pass an input plugin with their supported option:
 
-```js
-createPlugins(["ts", {noEmitOnError: false, tsconfig: "./lib/tsconfig.json"})
+```ts
+const plugins = createPlugins([
+  ["ts", { tsconfig: "./lib/tsconfig.json", noEmitOnError: false, module: "ESNext" }],
+  "js"
+])
 ```
 
 For adding extra plugins, you can:
