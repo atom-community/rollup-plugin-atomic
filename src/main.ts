@@ -10,7 +10,7 @@ import coffeescript from "rollup-plugin-coffee-script";
 import json from "@rollup/plugin-json";
 import cssOnly from "rollup-plugin-css-only";
 import babel from "@rollup/plugin-babel";
-import { wasm } from '@rollup/plugin-wasm';
+import { wasm } from "@rollup/plugin-wasm";
 
 export type Plugin =
   | "js"
@@ -73,7 +73,7 @@ export function createPlugins(
       plugins.push(
         typescript({
           noEmitOnError: false,
-          module: "ESNext" // do not modify the imports
+          module: "ESNext", // do not modify the imports
         })
       );
     } else {
@@ -184,18 +184,16 @@ export function createPlugins(
   if (typeof extraPlugins !== "boolean" && extraPlugins !== undefined) {
     try {
       plugins.push(...extraPlugins);
-    }
-    catch (e) {
-      console.error("You should pass extraPlugins as an array")
+    } catch (e) {
+      console.error("You should pass extraPlugins as an array");
     }
   }
 
   if (extraPluginsDeprecated) {
     try {
       plugins.push(...extraPluginsDeprecated);
-    }
-    catch (e) {
-      console.error("You should pass extraPluginsDeprecated as an array")
+    } catch (e) {
+      console.error("You should pass extraPluginsDeprecated as an array");
     }
   }
 
