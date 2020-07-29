@@ -10,6 +10,7 @@ import coffeescript from "rollup-plugin-coffee-script";
 import json from "@rollup/plugin-json";
 import cssOnly from "rollup-plugin-css-only";
 import babel from "@rollup/plugin-babel";
+import { wasm } from '@rollup/plugin-wasm';
 
 export type Plugin =
   | "js"
@@ -18,11 +19,13 @@ export type Plugin =
   | "json"
   | "css"
   | "babel"
+  | "wasm"
   | ["ts", typeof typescript]
   | ["babel", typeof babel]
   | ["coffee", typeof coffeescript]
   | ["json", typeof json]
-  | ["css", typeof cssOnly];
+  | ["css", typeof cssOnly]
+  | ["wasm", typeof wasm];
 
 // function to check if the first array has any of the second array
 // first array can have `[string, object]` as their input
@@ -161,6 +164,19 @@ export function createPlugins(
     } else {
       // plugin with options
       plugins.push(babel(inputPluginsNames[babelIndex!][1]));
+    }
+  }
+
+  // wasm
+  const wasmIndex = includesAny(inputPluginsNames, ["wasm", "WebAssembly"]);
+  if (wasmIndex !== null) {
+    const wasm = require("@rollup/plugin-wasm");
+    if (typeof inputPluginsNames[wasmIndex] === "string") {
+      // plugin name only
+      plugins.push(wasm());
+    } else {
+      // plugin with options
+      plugins.push(wasm(inputPluginsNames[wasmIndex][1]));
     }
   }
 
