@@ -65,6 +65,7 @@ babel
 coffee
 json
 css
+wasm
 (js is considered by default)
 ```
 
