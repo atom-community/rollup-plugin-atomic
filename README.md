@@ -27,9 +27,9 @@ and the following (only those that you use are needed):
 Create a `rollup.config.js` file at the root of the project with the following content. See API section for more details
 
 ```js
-const { createPlugins } = require("rollup-plugin-atomic");
+const { createPlugins } = require("rollup-plugin-atomic")
 
-const plugins = createPlugins(["ts", "babel"]);
+const plugins = createPlugins(["ts", "babel"])
 
 module.exports = {
   input: "src/main.ts",
@@ -41,7 +41,7 @@ module.exports = {
     },
   ],
   plugins: plugins,
-};
+}
 ```
 
 ## API
@@ -74,11 +74,12 @@ You can pass an input plugin with their supported option:
 ```ts
 const plugins = createPlugins([
   ["ts", { tsconfig: "./lib/tsconfig.json", noEmitOnError: false, module: "ESNext" }],
-  "js"
+  "js",
 ])
 ```
 
 For adding extra plugins, you can:
+
 ```ts
 import multyentry from '@rollup/plugin-multi-entry'
 createPlugins(["ts", [multyentry()])
@@ -101,23 +102,17 @@ createConfig(
 An example that uses `createConfig`:
 
 ```js
-const { createPlugins, createConfig } = require("rollup-plugin-atomic");
+const { createPlugins, createConfig } = require("rollup-plugin-atomic")
 
-const plugins = createPlugins(["ts", "babel"]);
+const plugins = createPlugins(["ts", "babel"])
 
-const config = createConfig(
-  "src/main.ts",
-  "dist",
-  "cjs",
-  ["atom", "electron", "node-pty-prebuilt-multiarch"],
-  plugins
-);
+const config = createConfig("src/main.ts", "dist", "cjs", ["atom", "electron", "node-pty-prebuilt-multiarch"], plugins)
 
-module.exports = config;
+module.exports = config
 ```
 
 You can create multiple configs using `createConfig` and export them as an array:
 
 ```js
-module.exports = [config1, config2];
+module.exports = [config1, config2]
 ```
