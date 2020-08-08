@@ -35,14 +35,14 @@
     "array-includes-any": "^2.7.3"
   },
   "peerDependencies": {
-    "rollup": "2.23.0",
+    "rollup": "2.23.1",
     "typescript": "^3.9.7",
     "coffeescript": "^1.12.7",
     "@babel/core": "^7.11.1"
   },
   "devDependencies": {
     "typescript": "^3.9.7",
-    "rollup": "2.23.0",
+    "rollup": "2.23.1",
     "prettier": "^2.0.5",
     "npm-check-updates": "7.0.3"
   }
