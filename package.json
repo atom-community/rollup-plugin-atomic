@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "tslib": "^2.0.1",
-    "@rollup/plugin-commonjs": "14.0.0",
-    "@rollup/plugin-node-resolve": "8.4.0",
+    "@rollup/plugin-commonjs": "15.0.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
     "@rollup/plugin-typescript": "5.0.2",
-    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-babel": "^5.2.0",
     "rollup-plugin-coffee-script": "2.0.0",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-wasm": "^5.0.0",
@@ -35,14 +35,14 @@
     "array-includes-any": "^2.7.3"
   },
   "peerDependencies": {
-    "rollup": "2.23.1",
+    "rollup": "2.24.0",
     "typescript": "^3.9.7",
     "coffeescript": "^1.12.7",
     "@babel/core": "^7.11.1"
   },
   "devDependencies": {
     "typescript": "^3.9.7",
-    "rollup": "2.23.1",
+    "rollup": "2.24.0",
     "prettier": "^2.0.5",
     "npm-check-updates": "7.1.0"
   }
