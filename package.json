@@ -27,7 +27,7 @@
     "rollup-plugin-coffee-script": "2.0.0",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-wasm": "^5.0.0",
-    "rollup-plugin-terser": "7.0.0",
+    "rollup-plugin-terser": "7.0.1",
     "rollup-plugin-auto-external": "2.0.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-execute": "^1.1.1",
@@ -35,14 +35,14 @@
     "array-includes-any": "^2.7.3"
   },
   "peerDependencies": {
-    "rollup": "2.26.6",
+    "rollup": "2.26.7",
     "typescript": "^4.0.2",
     "coffeescript": "^1.12.7",
     "@babel/core": "^7.11.4"
   },
   "devDependencies": {
     "typescript": "^4.0.2",
-    "rollup": "2.26.6",
+    "rollup": "2.26.7",
     "prettier": "^2.1.1",
     "npm-check-updates": "7.1.1"
   }
