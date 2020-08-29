@@ -2,6 +2,7 @@
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import { terser } from "rollup-plugin-terser"
+import closureCompiler from '@ampproject/rollup-plugin-closure-compiler';
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external"
 
@@ -208,14 +209,20 @@ export function createPlugins(
   // minify only in production mode
   if (process.env.NODE_ENV === "production") {
     plugins.push(
-      terser({
-        ecma: 2018,
-        warnings: true,
-        compress: {
-          drop_console: false,
-        },
-      })
-    )
+      closureCompiler({
+        compilation_level: "SIMPLE",
+        language_in: "ECMASCRIPT_2018",
+        language_out: "ECMASCRIPT_2018",
+        strict_mode_input: true,
+        use_types_for_optimization: true
+      }),
+      )
+      // terser({
+      //   ecma: 2018,
+      //   warnings: true,
+      //   compress: {
+      //     drop_console: false,
+      //   }),
   }
 
   return plugins
