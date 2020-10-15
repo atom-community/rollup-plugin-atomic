@@ -19,7 +19,7 @@
     "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {
-    "tslib": "^2.0.1",
+    "tslib": "^2.0.3",
     "@rollup/plugin-commonjs": "15.1.0",
     "@rollup/plugin-node-resolve": "9.0.0",
     "@rollup/plugin-typescript": "6.0.0",
@@ -35,15 +35,15 @@
     "array-includes-any": "^2.7.3"
   },
   "peerDependencies": {
-    "rollup": "2.28.2",
+    "rollup": "2.30.0",
     "typescript": "^4.0.3",
     "coffeescript": "^1.12.7",
-    "@babel/core": "^7.11.6"
+    "@babel/core": "^7.12.0"
   },
   "devDependencies": {
     "typescript": "^4.0.3",
-    "rollup": "2.28.2",
+    "rollup": "2.30.0",
     "prettier": "^2.1.2",
-    "npm-check-updates": "9.0.4"
+    "npm-check-updates": "9.1.0"
   }
 }
