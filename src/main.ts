@@ -170,6 +170,19 @@ export function createPlugins(
     }
   }
 
+  // visualizer
+  const visualizerIndex = includesAny(inputPluginsNames, ["visualizer", "plot"])
+  if (visualizerIndex !== null) {
+    const visualizer = require("rollup-plugin-visualizer")
+    if (typeof inputPluginsNames[visualizerIndex] === "string") {
+      // plugin name only
+      plugins.push(visualizer({sourcemap: true, open: true}))
+    } else {
+      // plugin with options
+      plugins.push(visualizer(inputPluginsNames[visualizerIndex][1]))
+    }
+  }
+
   // extra plugins
   if (typeof extraPlugins !== "boolean" && extraPlugins !== undefined) {
     try {
