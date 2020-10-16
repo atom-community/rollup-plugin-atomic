@@ -2,6 +2,7 @@
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import { terser } from "rollup-plugin-terser"
+import sourcemaps from 'rollup-plugin-sourcemaps';
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external"
 
@@ -187,6 +188,9 @@ export function createPlugins(
   }
 
   let pluginsCommon = [
+    // loading files with existing source maps
+    sourcemaps(),
+
     autoExternal({
       builtins: true,
       dependencies: false,
