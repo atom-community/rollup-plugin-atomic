@@ -60,13 +60,14 @@ createPlugins(
 which `inputPlugins` is among these:
 
 ```
+js (considered by default)
 ts
 babel
 coffee
 json
 css
 wasm
-(js is considered by default)
+visualizer
 ```
 
 You can pass an input plugin with their supported option:
