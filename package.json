@@ -21,6 +21,7 @@
   "dependencies": {
     "tslib": "^2.0.3",
     "@rollup/plugin-commonjs": "15.1.0",
+    "rollup-plugin-require-split-code": "0.2.0",
     "@rollup/plugin-node-resolve": "9.0.0",
     "@rollup/plugin-typescript": "6.0.0",
     "@rollup/plugin-babel": "^5.2.1",
