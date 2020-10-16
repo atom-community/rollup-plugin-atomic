@@ -29,7 +29,7 @@ jobs:
         run: apm -v
       - name: Install APM dependencies
         run: |
-          apm ci  # uses locked module. use `apm install` for non-locked
+          apm install
 
   Release:
     needs: [Test]
@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: "14.x"
       - name: NPM install
-        run: npm ci
+        run: npm install
       - name: Release 🎉
         uses: cycjimmy/semantic-release-action@v2
         env:
