@@ -2,7 +2,8 @@
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import { terser } from "rollup-plugin-terser"
-import sourcemaps from 'rollup-plugin-sourcemaps';
+import sourcemaps from 'rollup-plugin-sourcemaps'
+import split from "rollup-plugin-require-split-code"
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external"
 
@@ -217,6 +218,7 @@ export function createPlugins(
     }),
 
     // so Rollup can convert externals to an ES module
+    split(),
     commonjs(),
   ]
 
