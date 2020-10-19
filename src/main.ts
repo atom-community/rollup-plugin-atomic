@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import { terser } from "rollup-plugin-terser"
 import sourcemaps from 'rollup-plugin-sourcemaps';
+import replace from '@rollup/plugin-replace';
 // @ts-ignore
 import autoExternal from "rollup-plugin-auto-external"
 
@@ -224,15 +225,19 @@ export function createPlugins(
 
   // minify only in production mode
   if (process.env.NODE_ENV === "production") {
-    plugins.push(
+    plugins.push(...[
       terser({
         ecma: 2018,
         warnings: true,
         compress: {
           drop_console: false,
         },
-      })
-    )
+      }),
+      // set NODE_ENV to production
+      replace({
+        'process.env.NODE_ENV':JSON.stringify('production'),
+      }),
+    ])
   }
 
   return plugins
