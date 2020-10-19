@@ -226,16 +226,17 @@ export function createPlugins(
   // minify only in production mode
   if (process.env.NODE_ENV === "production") {
     plugins.push(...[
+      // set NODE_ENV to production
+      replace({
+        'process.env.NODE_ENV':JSON.stringify('production'),
+      }),
+      // minify
       terser({
         ecma: 2018,
         warnings: true,
         compress: {
           drop_console: false,
         },
-      }),
-      // set NODE_ENV to production
-      replace({
-        'process.env.NODE_ENV':JSON.stringify('production'),
       }),
     ])
   }
