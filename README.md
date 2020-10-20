@@ -11,15 +11,15 @@ npm install --save-dev rollup-plugin-atomic
 You should also install the peer dependencies:
 
 ```
-"rollup": "2.21.0",
+"rollup": "^2"
 ```
 
 and the following (only those that you use are needed):
 
 ```
-"typescript": "^3.9.6",
-"coffeescript": "^1.12.7",
-"@babel/core": "^7.10.5",
+"typescript": "^4",
+"coffeescript": "^1",
+"@babel/core": "^7"
 ```
 
 ## Usage
