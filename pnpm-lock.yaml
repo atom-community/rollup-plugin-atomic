@@ -14,10 +14,10 @@ dependencies:
   rollup-plugin-execute: 1.1.1
   rollup-plugin-sourcemaps: 0.6.3_rollup@2.31.0
   rollup-plugin-terser: 7.0.2_rollup@2.31.0
-  rollup-plugin-visualizer: 4.1.2_rollup@2.31.0
+  rollup-plugin-visualizer: 4.2.0_rollup@2.31.0
   tslib: 2.0.3
 devDependencies:
-  npm-check-updates: 9.2.3
+  npm-check-updates: 9.2.4
   prettier: 2.1.2
   rollup: 2.31.0
 lockfileVersion: 5.2
@@ -842,12 +842,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
-  /commander/6.1.0:
+  /commander/6.2.0:
     dev: true
     engines:
       node: '>= 6'
     resolution:
-      integrity: sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
+      integrity: sha512-zP4jEKbe8SHzKJYQmq8Y9gYjtO/POJLgIdKgV7B9qNmABVFVc+ctqSX6iXh4mCpJfRBOabiZ2YKPg8ciDw6C+Q==
   /commondir/1.0.1:
     dev: false
     resolution:
@@ -1966,12 +1966,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-gqkfgGePhTpAEgUsGEgcq1rqPXA+tv/aVBlgEzfXwA1yiUJF7xtEt3CtVwOjNYQOVknDk0F20w58Fnm3EtG0fA==
-  /npm-check-updates/9.2.3:
+  /npm-check-updates/9.2.4:
     dependencies:
       chalk: 4.1.0
       cint: 8.2.1
       cli-table: 0.3.1
-      commander: 6.1.0
+      commander: 6.2.0
       find-up: 5.0.0
       get-stdin: 8.0.0
       json-parse-helpfulerror: 1.0.3
@@ -1982,7 +1982,7 @@ packages:
       pacote: 11.1.11
       parse-github-url: 1.0.2
       progress: 2.0.3
-      prompts: 2.3.2
+      prompts: 2.4.0
       rc-config-loader: 3.0.0
       remote-git-tags: 3.0.0
       rimraf: 3.0.2
@@ -1995,7 +1995,7 @@ packages:
       node: '>=10.17'
     hasBin: true
     resolution:
-      integrity: sha512-HNXgM0VNb4BkPqPyGbnt0DhebUYibgN5RBawBBA0I/W9JO8+hI873S29KWHbPAi5RkqTgQ5uPxdZxCf5gaMotg==
+      integrity: sha512-YXEIqKXzxOhtPWg670+JAp/jPtjfTdaBJVGSlWL3eHbUDY4O80ELQNGO/qDy8oxh3pOrxSdII7vNglDf4FDw4w==
   /npm-install-checks/4.0.0:
     dependencies:
       semver: 7.3.2
@@ -2278,7 +2278,7 @@ packages:
       node: '>=0.12'
     resolution:
       integrity: sha1-ZznpaOMFHaIM5kl/srUPaRHfPW0=
-  /prompts/2.3.2:
+  /prompts/2.4.0:
     dependencies:
       kleur: 3.0.3
       sisteransi: 1.0.5
@@ -2286,7 +2286,7 @@ packages:
     engines:
       node: '>= 6'
     resolution:
-      integrity: sha512-Q06uKs2CkNYVID0VqwfAl9mipo99zkBv/n2JtWY89Yxa3ZabWSrs0e2KTudKVa3peLUvYXMefDqIleLPVUBZMA==
+      integrity: sha512-awZAKrk3vN6CroQukBL+R9051a4R3zCZBlJm/HBfrSZ8iTpYix3VX1vU4mveiLpiwmOJT4wokTF9m6HUk4KqWQ==
   /psl/1.8.0:
     dev: true
     resolution:
@@ -2552,7 +2552,7 @@ packages:
       rollup: ^2.0.0
     resolution:
       integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==
-  /rollup-plugin-visualizer/4.1.2_rollup@2.31.0:
+  /rollup-plugin-visualizer/4.2.0_rollup@2.31.0:
     dependencies:
       nanoid: 3.1.12
       open: 7.3.0
@@ -2566,7 +2566,7 @@ packages:
     peerDependencies:
       rollup: '>=1.20.0'
     resolution:
-      integrity: sha512-GdUYsbMSsIC7aXKMObNHHxu2CWyIem3uVGZJPx78e3W+TX7T7+dTj7kVTy4TMbBd2vFtVQ2E0PnwQfqYoY0sMw==
+      integrity: sha512-xjfvoK4x0G7lBT3toMx8K/9tkCEWhRehnSJnn+PLY3Hjk8sNvyo407b68Cd3hdV9j42xcb8HXt0ZrmRi5NWeaQ==
   /rollup-pluginutils/2.8.2:
     dependencies:
       estree-walker: 0.6.1
@@ -3132,7 +3132,7 @@ specifiers:
   array-includes-any: ^2.7.3
   coffeescript: ^1
   csso-cli: ^3.0.0
-  npm-check-updates: 9.2.3
+  npm-check-updates: 9.2.4
   prettier: ^2.1.2
   rollup: 2.31.0
   rollup-plugin-auto-external: 2.0.0
@@ -3141,6 +3141,6 @@ specifiers:
   rollup-plugin-execute: ^1.1.1
   rollup-plugin-sourcemaps: ^0.6.3
   rollup-plugin-terser: 7.0.2
-  rollup-plugin-visualizer: ^4.1.2
+  rollup-plugin-visualizer: ^4.2.0
   tslib: ^2.0.3
   typescript: ^4
