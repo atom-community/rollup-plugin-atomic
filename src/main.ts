@@ -13,6 +13,7 @@ import json from "@rollup/plugin-json"
 import cssOnly from "rollup-plugin-css-only"
 import babel from "@rollup/plugin-babel"
 import { wasm } from "@rollup/plugin-wasm"
+import { asc } from "rollup-plugin-assemblyscript"
 
 export type Plugin =
   | "js"
@@ -22,12 +23,14 @@ export type Plugin =
   | "css"
   | "babel"
   | "wasm"
+  | "as"
   | ["ts", typeof typescript]
   | ["babel", typeof babel]
   | ["coffee", typeof coffeescript]
   | ["json", typeof json]
   | ["css", typeof cssOnly]
   | ["wasm", typeof wasm]
+  | ["as", typeof asc]
 
 // function to check if the first array has any of the second array
 // first array can have `[string, object]` as their input
@@ -168,6 +171,19 @@ export function createPlugins(
     } else {
       // plugin with options
       plugins.push(wasm(inputPluginsNames[wasmIndex][1]))
+    }
+  }
+
+  // as
+  const ascIndex = includesAny(inputPluginsNames, ["as", "asc", "assemblyscript", "AssemblyScript"])
+  if (ascIndex !== null) {
+    const asc = require("rollup-plugin-assemblyscript")
+    if (typeof inputPluginsNames[ascIndex] === "string") {
+      // plugin name only
+      plugins.push(asc())
+    } else {
+      // plugin with options
+      plugins.push(asc(inputPluginsNames[ascIndex][1]))
     }
   }
 
