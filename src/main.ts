@@ -24,6 +24,7 @@ export type Plugin =
   | "babel"
   | "wasm"
   | "as"
+  | "terser"
   | ["ts", typeof typescript]
   | ["babel", typeof babel]
   | ["coffee", typeof coffeescript]
@@ -31,6 +32,7 @@ export type Plugin =
   | ["css", typeof cssOnly]
   | ["wasm", typeof wasm]
   | ["as", typeof asc]
+  | ["terser", typeof terser]
 
 // function to check if the first array has any of the second array
 // first array can have `[string, object]` as their input
@@ -239,22 +241,34 @@ export function createPlugins(
 
   plugins.push(...pluginsCommon)
 
-  // minify only in production mode
+  // Replace in production mode
   if (process.env.NODE_ENV === "production") {
-    plugins.push(...[
+    plugins.push(
       // set NODE_ENV to production
       replace({
         'process.env.NODE_ENV':JSON.stringify('production'),
       }),
-      // minify
-      terser({
-        ecma: 2018,
-        warnings: true,
-        compress: {
-          drop_console: false,
-        },
-      }),
-    ])
+    )
+  }
+
+  // terser
+  const terserIndex = includesAny(inputPluginsNames, ["terser"])
+  if (terserIndex !== null && typeof inputPluginsNames[terserIndex] === "string") {
+    // plugin with options
+    plugins.push(terser(inputPluginsNames[terserIndex][1]))
+  } else {
+    if (process.env.NODE_ENV === "production") {
+      plugins.push(
+        // minify
+        terser({
+          ecma: 2018,
+          warnings: true,
+          compress: {
+            drop_console: false,
+          },
+        }),
+      )
+    }
   }
 
   return plugins
