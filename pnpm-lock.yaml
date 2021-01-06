@@ -8,8 +8,9 @@ dependencies:
   '@rollup/plugin-wasm': 5.1.2_rollup@2.31.0
   array-includes-any: 2.7.3
   csso-cli: 3.0.0
+  rollup-plugin-assemblyscript: 1.3.0
   rollup-plugin-auto-external: 2.0.0_rollup@2.31.0
-  rollup-plugin-coffee-script: 2.0.0_coffeescript@2.5.1
+  rollup-plugin-coffee-script: 2.0.0_coffeescript@1.12.7
   rollup-plugin-css-only: 3.1.0_rollup@2.31.0
   rollup-plugin-execute: 1.1.1
   rollup-plugin-sourcemaps: 0.6.3_rollup@2.31.0
@@ -23,7 +24,7 @@ devDependencies:
 lockfileVersion: 5.2
 optionalDependencies:
   '@babel/core': 7.12.3
-  coffeescript: 2.5.1
+  coffeescript: 1.12.7
   typescript: 4.0.3
 packages:
   /@babel/code-frame/7.10.4:
@@ -801,14 +802,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
-  /coffeescript/2.5.1:
+  /coffeescript/1.12.7:
     dev: false
     engines:
-      node: '>=6'
+      node: '>=0.8.0'
     hasBin: true
     optional: true
     resolution:
-      integrity: sha512-J2jRPX0eeFh5VKyVnoLrfVFgLZtnnmp96WQSLAS8OrLm2wtQLcnikYKe1gViJKDH7vucjuhHvBKKBP3rKcD1tQ==
+      integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==
   /color-convert/1.9.3:
     dependencies:
       color-name: 1.1.3
@@ -2484,6 +2485,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+  /rollup-plugin-assemblyscript/1.3.0:
+    dev: false
+    peerDependencies:
+      assemblyscript: '*'
+    resolution:
+      integrity: sha512-RWA5xbRZkIayYW/QzqWloFxUi+Gsiv0wvb3OjzvVFZF0O/7y40dp13ET9a0k1DwOqTOUiruSDhCVK4U73H0dIA==
   /rollup-plugin-auto-external/2.0.0_rollup@2.31.0:
     dependencies:
       builtins: 2.0.1
@@ -2498,9 +2505,9 @@ packages:
       rollup: '>=0.45.2'
     resolution:
       integrity: sha512-HQM3ZkZYfSam1uoZtAB9sK26EiAsfs1phrkf91c/YX+S07wugyRXSigBxrIwiLr5EPPilKYmoMxsrnlGBsXnuQ==
-  /rollup-plugin-coffee-script/2.0.0_coffeescript@2.5.1:
+  /rollup-plugin-coffee-script/2.0.0_coffeescript@1.12.7:
     dependencies:
-      coffeescript: 2.5.1
+      coffeescript: 1.12.7
       object-assign: 4.1.1
       rollup-plugin-node-resolve: 3.4.0
       rollup-pluginutils: 2.8.2
@@ -3134,11 +3141,12 @@ specifiers:
   '@rollup/plugin-typescript': 8.1.0
   '@rollup/plugin-wasm': ^5.1.2
   array-includes-any: ^2.7.3
-  coffeescript: ^2
+  coffeescript: ^1
   csso-cli: ^3.0.0
   npm-check-updates: 10.2.5
   prettier: ^2.2.1
   rollup: 2.31.0
+  rollup-plugin-assemblyscript: ^1.3.0
   rollup-plugin-auto-external: 2.0.0
   rollup-plugin-coffee-script: 2.0.0
   rollup-plugin-css-only: ^3.1.0
