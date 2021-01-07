@@ -240,7 +240,9 @@ export function createPlugins(
     }),
 
     // so Rollup can convert externals to an ES module
-    commonjs(),
+    commonjs({
+      transformMixedEsModules: true
+    }),
   ]
 
   plugins.push(...pluginsCommon)
