@@ -8,13 +8,15 @@ import type sourcemaps from "rollup-plugin-sourcemaps"
 import type replace from "@rollup/plugin-replace"
 // @ts-ignore
 import type autoExternal from "rollup-plugin-auto-external"
-
 import type typescript from "@rollup/plugin-typescript"
+// @ts-ignore
 import type coffeescript from "rollup-plugin-coffee-script"
 import type json from "@rollup/plugin-json"
+// @ts-ignore
 import type cssOnly from "rollup-plugin-css-only"
 import type babel from "@rollup/plugin-babel"
 import type { wasm } from "@rollup/plugin-wasm"
+// @ts-ignore
 import type { asc } from "rollup-plugin-assemblyscript"
 
 export type Plugin =
@@ -31,18 +33,18 @@ export type Plugin =
   | "sourcemaps"
   | "commonjs"
   | "resolve"
-  | ["ts", typeof typescript]
-  | ["babel", typeof babel]
-  | ["coffee", typeof coffeescript]
-  | ["json", typeof json]
-  | ["css", typeof cssOnly]
-  | ["wasm", typeof wasm]
-  | ["as", typeof asc]
-  | ["terser", typeof terser]
-  | ["replace", typeof replace]
-  | ["sourcemaps", typeof sourcemaps]
-  | ["commonjs", typeof commonjs]
-  | ["resolve", typeof resolve]
+  | ["ts", typeof typescript, boolean?]
+  | ["babel", typeof babel, boolean?]
+  | ["coffee", typeof coffeescript, boolean?]
+  | ["json", typeof json, boolean?]
+  | ["css", typeof cssOnly, boolean?]
+  | ["wasm", typeof wasm, boolean?]
+  | ["as", typeof asc, boolean?]
+  | ["terser", typeof terser, boolean?]
+  | ["replace", typeof replace, boolean?]
+  | ["sourcemaps", typeof sourcemaps, boolean?]
+  | ["commonjs", typeof commonjs, boolean?]
+  | ["resolve", typeof resolve, boolean?]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
@@ -193,6 +195,9 @@ export function createPlugins(
       if (typeof inputPluginsNames[index] === "string") {
         // plugin name only
         plugins.push(pluginFunction(pluginDefaultOptions))
+      } else if (typeof inputPluginsNames[index][2] === "boolean" && inputPluginsNames[index][2] === true) {
+        // plugin with options that override pluginDefaultOptions
+        plugins.push(pluginFunction( {...pluginDefaultOptions, ...inputPluginsNames[index][1]}))
       } else {
         // plugin with options
         plugins.push(pluginFunction(inputPluginsNames[index][1]))
