@@ -1,19 +1,19 @@
 // common plugins
-import resolve from "@rollup/plugin-node-resolve"
-import commonjs from "@rollup/plugin-commonjs"
-import { terser } from "rollup-plugin-terser"
-import sourcemaps from 'rollup-plugin-sourcemaps';
-import replace from '@rollup/plugin-replace';
+import type resolve from "@rollup/plugin-node-resolve"
+import type commonjs from "@rollup/plugin-commonjs"
+import type { terser } from "rollup-plugin-terser"
+import type sourcemaps from "rollup-plugin-sourcemaps"
+import type replace from "@rollup/plugin-replace"
 // @ts-ignore
-import autoExternal from "rollup-plugin-auto-external"
+import type autoExternal from "rollup-plugin-auto-external"
 
-import typescript from "@rollup/plugin-typescript"
-import coffeescript from "rollup-plugin-coffee-script"
-import json from "@rollup/plugin-json"
-import cssOnly from "rollup-plugin-css-only"
-import babel from "@rollup/plugin-babel"
-import { wasm } from "@rollup/plugin-wasm"
-import { asc } from "rollup-plugin-assemblyscript"
+import type typescript from "@rollup/plugin-typescript"
+import type coffeescript from "rollup-plugin-coffee-script"
+import type json from "@rollup/plugin-json"
+import type cssOnly from "rollup-plugin-css-only"
+import type babel from "@rollup/plugin-babel"
+import type { wasm } from "@rollup/plugin-wasm"
+import type { asc } from "rollup-plugin-assemblyscript"
 
 export type Plugin =
   | "js"
