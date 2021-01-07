@@ -179,7 +179,7 @@ export function createPlugins(
   // as
   const ascIndex = includesAny(inputPluginsNames, ["as", "asc", "assemblyscript", "AssemblyScript"])
   if (ascIndex !== null) {
-    const asc = require("rollup-plugin-assemblyscript")
+    const { asc } = require("rollup-plugin-assemblyscript")
     if (typeof inputPluginsNames[ascIndex] === "string") {
       // plugin name only
       plugins.push(asc())
