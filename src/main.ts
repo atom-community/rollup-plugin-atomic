@@ -233,8 +233,10 @@ export function createPlugins(
 
     // so Rollup can find externals
     resolve({
-      extensions: [".ts", ".js", ".coffee", ".tsx", ".jsx", ".mjs"],
+      mainFields: ['module', 'exports', 'es', 'es6', 'esm', 'main'],
+      extensions: [".ts", ".js", ".coffee", ".tsx", ".jsx", ".mjs", ".node", ".json"],
       preferBuiltins: true,
+      dedupe: [],
     }),
 
     // so Rollup can convert externals to an ES module
