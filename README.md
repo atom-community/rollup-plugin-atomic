@@ -72,7 +72,22 @@ terser (considered by default in production)
 replace (considered by default in production)
 ```
 
-You can pass an input plugin with their supported option:
+### Override Default Options for the plugins `[name, overriddenOptions, true]`
+
+You can pass an input plugin with the overridden options using the `[name, overriddenOptions, true]` syntax.
+
+```ts
+const plugins = createPlugins([
+  ["ts", { tsconfig: "./lib/tsconfig.json" }, true], // third element makes the config merge to and override the default options
+  "js",
+])
+```
+
+The difference with the next syntax is that these are merged into the default options and if there is a config with the same name, they override it, but the next syntax completely replaces the default options.
+
+### Completely New Options for the plugins `[name, newOptions]`
+
+You can pass an input plugin with their supported option using the `[name, newOptions]` syntax:
 
 ```ts
 const plugins = createPlugins([
@@ -81,16 +96,21 @@ const plugins = createPlugins([
 ])
 ```
 
-For adding extra plugins, you can:
+### Adding New Extra Plugins
+
+For adding extra plugins, you can pass them in array to the second argument
 
 ```ts
 import multyentry from '@rollup/plugin-multi-entry'
-createPlugins(["ts", [multyentry()])
+createPlugins(["ts"], [multyentry()])
 ```
 
-### createConfig
 
-You can use `createConfig` to create the configs you need. This is a simple wrapper around the rollup config.
+### createConfig (not recommend)
+
+This is a simple wrapper around the rollup config, so it is recommended to use the default Rollup syntax.
+
+You can use `createConfig` to create the configs you need.
 
 ```ts
 createConfig(
