@@ -280,6 +280,29 @@ export function createPlugins(
           },
         }),
       )
+
+  // utility function that pushes a plugin
+  function pushPlugin(
+    nameTriggers: string[],
+    [moduleName, prop]: [modulesname: string, prop?: string],
+    pluginDefaultOptions: object = {},
+    includeByDefault: boolean = false
+  ) {
+    const index = includesAny(inputPluginsNames, [...nameTriggers, moduleName])
+    if (index !== null) {
+      const modul = require(moduleName)
+      const pluginFunction = typeof prop === "string" ? modul[prop] : modul
+      if (typeof inputPluginsNames[index] === "string") {
+        // plugin name only
+        plugins.push(pluginFunction(pluginDefaultOptions))
+      } else {
+        // plugin with options
+        plugins.push(pluginFunction(inputPluginsNames[index][1]))
+      }
+    } else if (includeByDefault) {
+      const modul = require(moduleName)
+      const pluginFunction = typeof prop === "string" ? modul[prop] : modul
+      plugins.push(pluginFunction(pluginDefaultOptions))
     }
   }
 
