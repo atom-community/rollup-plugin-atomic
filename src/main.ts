@@ -28,6 +28,9 @@ export type Plugin =
   | "as"
   | "terser"
   | "replace"
+  | "sourcemaps"
+  | "commonjs"
+  | "resolve"
   | ["ts", typeof typescript]
   | ["babel", typeof babel]
   | ["coffee", typeof coffeescript]
@@ -37,66 +40,32 @@ export type Plugin =
   | ["as", typeof asc]
   | ["terser", typeof terser]
   | ["replace", typeof replace]
+  | ["sourcemaps", typeof sourcemaps]
+  | ["commonjs", typeof commonjs]
+  | ["resolve", typeof resolve]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
-  extraPlugins?: Array<any> | boolean,
-  extraPluginsDeprecated?: Array<any>
+  extraPlugins?: Array<any>
 ) {
   let plugins = []
 
   // language specific
 
   // typescript
-  const tsIndex = includesAny(inputPluginsNames, ["ts", ".ts", "typescript", "TypeScript"])
-  if (tsIndex !== null) {
-    const typescript = require("@rollup/plugin-typescript")
-    if (typeof inputPluginsNames[tsIndex] === "string") {
-      // plugin name only
-      plugins.push(
-        typescript({
-          noEmitOnError: false,
-          module: "ESNext", // do not modify the imports
-        })
-      )
-    } else {
-      // plugin with options
-      plugins.push(typescript(inputPluginsNames[tsIndex][1]))
-    }
-  }
+  pushPlugin(["ts", ".ts", "typescript", "TypeScript"], ["@rollup/plugin-typescript"], {
+    noEmitOnError: false,
+    module: "ESNext", // do not modify the imports
+  })
 
   // coffeescript
-  const coffeeIndex = includesAny(inputPluginsNames, [
-    "coffee",
-    ".coffee",
-    "coffeescript",
-    "coffee-script",
-    "CoffeeScript",
-    "cs",
-  ])
-  if (coffeeIndex !== null) {
-    const coffeescript = require("rollup-plugin-coffee-script")
-    if (typeof inputPluginsNames[coffeeIndex] === "string") {
-      // plugin name only
-      plugins.push(coffeescript())
-    } else {
-      // plugin with options
-      plugins.push(coffeescript(inputPluginsNames[coffeeIndex][1]))
-    }
-  }
+  pushPlugin(
+    ["coffee", ".coffee", "coffeescript", "coffee-script", "CoffeeScript", "cs"],
+    ["rollup-plugin-coffee-script"]
+  )
 
   // json
-  const jsonIndex = includesAny(inputPluginsNames, ["json", ".json", "JSON"])
-  if (jsonIndex !== null) {
-    const json = require("@rollup/plugin-json")
-    if (typeof inputPluginsNames[jsonIndex] === "string") {
-      // plugin name only
-      plugins.push(json({ compact: true }))
-    } else {
-      // plugin with options
-      plugins.push(json(inputPluginsNames[jsonIndex][1]))
-    }
-  }
+  pushPlugin(["json", ".json", "JSON"], ["@rollup/plugin-json"], { compact: true })
 
   // css only
   const cssIndex = includesAny(inputPluginsNames, ["css", ".css"])
@@ -122,72 +91,22 @@ export function createPlugins(
     }
   }
 
-  // babel
-  let babelInput = extraPlugins
-  if (typeof babelInput === "boolean") {
-    console.warn(
-      'Setting babel with the second argument is depcrated. Pass "babel" like other plugins to the first argument'
-    )
-  }
-
-  const babelIndex = includesAny(inputPluginsNames, ["babel"])
-  if (babelIndex !== null || babelInput === true) {
-    const { babel } = require("@rollup/plugin-babel")
-    if (babelInput === true || typeof inputPluginsNames[babelIndex!] === "string") {
-      // plugin name only
-      plugins.push(
-        babel({
-          extensions: [".js", ".jsx", ".mjs", ".coffee"],
-          babelHelpers: "bundled",
-        })
-      )
-    } else {
-      // plugin with options
-      plugins.push(babel(inputPluginsNames[babelIndex!][1]))
-    }
-  }
+  pushPlugin(["babel"], ["@rollup/plugin-babel", "babel"], {
+    extensions: [".js", ".jsx", ".mjs", ".coffee"],
+    babelHelpers: "bundled",
+  })
 
   // wasm
-  const wasmIndex = includesAny(inputPluginsNames, ["wasm", "WebAssembly"])
-  if (wasmIndex !== null) {
-    const wasm = require("@rollup/plugin-wasm")
-    if (typeof inputPluginsNames[wasmIndex] === "string") {
-      // plugin name only
-      plugins.push(wasm())
-    } else {
-      // plugin with options
-      plugins.push(wasm(inputPluginsNames[wasmIndex][1]))
-    }
-  }
+  pushPlugin(["wasm", "WebAssembly"], ["@rollup/plugin-wasm", "wasm"])
 
   // as
-  const ascIndex = includesAny(inputPluginsNames, ["as", "asc", "assemblyscript", "AssemblyScript"])
-  if (ascIndex !== null) {
-    const { asc } = require("rollup-plugin-assemblyscript")
-    if (typeof inputPluginsNames[ascIndex] === "string") {
-      // plugin name only
-      plugins.push(asc())
-    } else {
-      // plugin with options
-      plugins.push(asc(inputPluginsNames[ascIndex][1]))
-    }
-  }
+  pushPlugin(["as", "asc", "assemblyscript", "AssemblyScript"], ["rollup-plugin-assemblyscript", "asc"])
 
   // visualizer
-  const visualizerIndex = includesAny(inputPluginsNames, ["visualizer", "plot"])
-  if (visualizerIndex !== null) {
-    const visualizer = require("rollup-plugin-visualizer")
-    if (typeof inputPluginsNames[visualizerIndex] === "string") {
-      // plugin name only
-      plugins.push(visualizer({sourcemap: true, open: true}))
-    } else {
-      // plugin with options
-      plugins.push(visualizer(inputPluginsNames[visualizerIndex][1]))
-    }
-  }
+  pushPlugin(["visualizer", "plot"], ["rollup-plugin-visualizer"], { sourcemap: true, open: true })
 
   // extra plugins
-  if (typeof extraPlugins !== "boolean" && extraPlugins !== undefined) {
+  if (extraPlugins !== undefined && typeof extraPlugins === "object" /*array*/) {
     try {
       plugins.push(...extraPlugins)
     } catch (e) {
@@ -195,73 +114,70 @@ export function createPlugins(
     }
   }
 
-  if (extraPluginsDeprecated) {
-    try {
-      plugins.push(...extraPluginsDeprecated)
-    } catch (e) {
-      console.error("You should pass extraPluginsDeprecated as an array")
-    }
-  }
+  // Default plugins
 
-  let pluginsCommon = [
-    // loading files with existing source maps
-    sourcemaps(),
+  // loading files with existing source maps
+  pushPlugin(["sourcemaps"], ["rollup-plugin-sourcemaps"], {}, true)
 
-    autoExternal({
+  pushPlugin(
+    ["autoExternal"],
+    ["rollup-plugin-auto-external"],
+    {
       builtins: true,
       dependencies: false,
       peerDependencies: false,
-    }),
+    },
+    true
+  )
 
-    // so Rollup can find externals
-    resolve({
-      mainFields: ['module', 'exports', 'es', 'es6', 'esm', 'main'],
+  // so Rollup can find externals
+  pushPlugin(
+    ["resolve"],
+    ["@rollup/plugin-node-resolve"],
+    {
+      mainFields: ["module", "exports", "es", "es6", "esm", "main"],
       extensions: [".ts", ".js", ".coffee", ".tsx", ".jsx", ".mjs", ".node", ".json"],
       preferBuiltins: true,
       dedupe: [],
-    }),
+    },
+    true
+  )
 
-    // so Rollup can convert externals to an ES module
-    commonjs({
-      transformMixedEsModules: true
-    }),
-  ]
-
-  plugins.push(...pluginsCommon)
+  // so Rollup can convert externals to an ES module
+  pushPlugin(
+    ["commonjs"],
+    ["@rollup/plugin-commonjs"],
+    {
+      transformMixedEsModules: true,
+    },
+    true
+  )
 
   // replace
-  const replaceIndex = includesAny(inputPluginsNames, ["replace"])
-  if (replaceIndex !== null && typeof inputPluginsNames[replaceIndex] === "string") {
-    // plugin with options
-    plugins.push(replace(inputPluginsNames[replaceIndex][1]))
-  } else {
-    if (process.env.NODE_ENV === "production") {
-      plugins.push(
-        // set NODE_ENV to production
-        replace({
-          'process.env.NODE_ENV':JSON.stringify('production'),
-        }),
-      )
-    }
-  }
+  pushPlugin(
+    ["replace"],
+    ["@rollup/plugin-replace"],
+    {
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    },
+    true
+  )
 
   // terser
-  const terserIndex = includesAny(inputPluginsNames, ["terser"])
-  if (terserIndex !== null && typeof inputPluginsNames[terserIndex] === "string") {
-    // plugin with options
-    plugins.push(terser(inputPluginsNames[terserIndex][1]))
-  } else {
-    if (process.env.NODE_ENV === "production") {
-      plugins.push(
-        // minify
-        terser({
+  pushPlugin(
+    ["terser"],
+    ["rollup-plugin-terser", "terser"],
+    process.env.NODE_ENV === "production"
+      ? {
           ecma: 2018,
           warnings: true,
           compress: {
             drop_console: false,
           },
-        }),
-      )
+        }
+      : {},
+    true
+  )
 
   // utility function that pushes a plugin
   function pushPlugin(
