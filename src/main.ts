@@ -33,6 +33,7 @@ export type Plugin =
   | "sourcemaps"
   | "commonjs"
   | "resolve"
+  | "autoExternal"
   | ["ts", typeof typescript, boolean?]
   | ["babel", typeof babel, boolean?]
   | ["coffee", typeof coffeescript, boolean?]
@@ -45,6 +46,7 @@ export type Plugin =
   | ["sourcemaps", typeof sourcemaps, boolean?]
   | ["commonjs", typeof commonjs, boolean?]
   | ["resolve", typeof resolve, boolean?]
+  | ["autoExternal", typeof resolve, boolean?]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],

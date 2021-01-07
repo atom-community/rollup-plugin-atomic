@@ -68,8 +68,16 @@ json
 css
 wasm
 visualizer
-terser (considered by default in production)
-replace (considered by default in production)
+```
+
+Default plugins configured automatically:
+```
+commonjs
+resolve
+autoExternal
+sourcemaps
+terser (in production)
+replace (in production)
 ```
 
 ### Override Default Options for the plugins `[name, overriddenOptions, true]`
@@ -105,6 +113,8 @@ import multyentry from '@rollup/plugin-multi-entry'
 createPlugins(["ts"], [multyentry()])
 ```
 
+
+-----------
 
 ### createConfig (not recommend)
 
