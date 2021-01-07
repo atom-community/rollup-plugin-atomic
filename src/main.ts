@@ -176,7 +176,7 @@ export function createPlugins(
           },
         }
       : {},
-    true
+    process.env.NODE_ENV === "production"
   )
 
   // utility function that pushes a plugin
