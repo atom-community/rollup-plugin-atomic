@@ -1,3 +1,5 @@
+import { includesAny } from "./utils"
+
 // common plugins
 import type resolve from "@rollup/plugin-node-resolve"
 import type commonjs from "@rollup/plugin-commonjs"
@@ -35,26 +37,6 @@ export type Plugin =
   | ["as", typeof asc]
   | ["terser", typeof terser]
   | ["replace", typeof replace]
-
-// function to check if the first array has any of the second array
-// first array can have `[string, object]` as their input
-function includesAny(arr1: Array<string | [string, Object]>, arr2: Array<string>): null | number {
-  for (let index = 0; index < arr1.length; index++) {
-    const elm = arr1[index]
-    let name: string
-    if (typeof elm === "string") {
-      // plugin name only
-      name = elm
-    } else {
-      // plugin with options
-      name = elm[0]
-    }
-    if (arr2.includes(name)) {
-      return index
-    }
-  }
-  return null
-}
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
