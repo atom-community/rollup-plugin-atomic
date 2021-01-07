@@ -25,6 +25,7 @@ export type Plugin =
   | "wasm"
   | "as"
   | "terser"
+  | "replace"
   | ["ts", typeof typescript]
   | ["babel", typeof babel]
   | ["coffee", typeof coffeescript]
@@ -33,6 +34,7 @@ export type Plugin =
   | ["wasm", typeof wasm]
   | ["as", typeof asc]
   | ["terser", typeof terser]
+  | ["replace", typeof replace]
 
 // function to check if the first array has any of the second array
 // first array can have `[string, object]` as their input
@@ -241,14 +243,20 @@ export function createPlugins(
 
   plugins.push(...pluginsCommon)
 
-  // Replace in production mode
-  if (process.env.NODE_ENV === "production") {
-    plugins.push(
-      // set NODE_ENV to production
-      replace({
-        'process.env.NODE_ENV':JSON.stringify('production'),
-      }),
-    )
+  // replace
+  const replaceIndex = includesAny(inputPluginsNames, ["replace"])
+  if (replaceIndex !== null && typeof inputPluginsNames[replaceIndex] === "string") {
+    // plugin with options
+    plugins.push(replace(inputPluginsNames[replaceIndex][1]))
+  } else {
+    if (process.env.NODE_ENV === "production") {
+      plugins.push(
+        // set NODE_ENV to production
+        replace({
+          'process.env.NODE_ENV':JSON.stringify('production'),
+        }),
+      )
+    }
   }
 
   // terser

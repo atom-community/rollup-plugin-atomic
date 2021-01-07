@@ -69,6 +69,7 @@ css
 wasm
 visualizer
 terser (considered by default in production)
+replace (considered by default in production)
 ```
 
 You can pass an input plugin with their supported option:
