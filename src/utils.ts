@@ -17,3 +17,12 @@ export function includesAny(arr1: Array<string | [string, Object, boolean?]>, ar
   }
   return null
 }
+
+export function getPluginFunction(modul: any, prop?: string) {
+  let pluginFunction = typeof prop === "string" ? modul[prop] : modul
+  if (typeof pluginFunction !== "function" && typeof pluginFunction.default === "function") {
+    return pluginFunction.default
+  } else {
+    return pluginFunction
+  }
+}

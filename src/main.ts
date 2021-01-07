@@ -1,4 +1,4 @@
-import { includesAny } from "./utils"
+import { includesAny, getPluginFunction } from "./utils"
 
 // common plugins
 import type resolve from "@rollup/plugin-node-resolve"
@@ -192,8 +192,7 @@ export function createPlugins(
   ) {
     const index = includesAny(inputPluginsNames, [...nameTriggers, moduleName])
     if (index !== null) {
-      const modul = require(moduleName)
-      const pluginFunction = typeof prop === "string" ? modul[prop] : modul
+      const pluginFunction = getPluginFunction(require(moduleName), prop)
       if (typeof inputPluginsNames[index] === "string") {
         // plugin name only
         plugins.push(pluginFunction(pluginDefaultOptions))
@@ -205,8 +204,7 @@ export function createPlugins(
         plugins.push(pluginFunction(inputPluginsNames[index][1]))
       }
     } else if (includeByDefault) {
-      const modul = require(moduleName)
-      const pluginFunction = typeof prop === "string" ? modul[prop] : modul
+      const pluginFunction = getPluginFunction(require(moduleName), prop)
       plugins.push(pluginFunction(pluginDefaultOptions))
     }
   }
