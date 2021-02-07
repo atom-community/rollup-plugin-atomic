@@ -31,6 +31,9 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
+    "test.format": "prettier . --check",
+    "lint": "eslint . --fix",
+    "test.lint": "eslint .",
     "tsc": "tsc -p src/tsconfig.json || echo done",
     "build": "npm run tsc",
     "prepare": "npm run build",
