@@ -71,6 +71,7 @@ visualizer
 ```
 
 Default plugins configured automatically:
+
 ```
 commonjs
 resolve
@@ -109,12 +110,11 @@ const plugins = createPlugins([
 For adding extra plugins, you can pass them in array to the second argument
 
 ```ts
-import multyentry from '@rollup/plugin-multi-entry'
+import multyentry from "@rollup/plugin-multi-entry"
 createPlugins(["ts"], [multyentry()])
 ```
 
-
------------
+---
 
 ### createConfig (not recommend)
 
