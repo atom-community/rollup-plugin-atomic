@@ -1,6 +1,5 @@
 import { includesAny, getPluginFunction } from "./utils"
 
-// common plugins
 //@ts-ignore
 import type resolve from "@rollup/plugin-node-resolve"
 //@ts-ignore
@@ -23,6 +22,8 @@ import type babel from "@rollup/plugin-babel"
 import type { wasm } from "@rollup/plugin-wasm"
 // @ts-ignore
 import type { asc } from "rollup-plugin-assemblyscript"
+// @ts-ignore
+import type visualizer from "rollup-plugin-visualizer"
 
 export type Plugin =
   | "js"
@@ -39,6 +40,7 @@ export type Plugin =
   | "commonjs"
   | "resolve"
   | "autoExternal"
+  | "visualizer"
   | ["ts", typeof typescript, boolean?]
   | ["babel", typeof babel, boolean?]
   | ["coffee", typeof coffeescript, boolean?]
@@ -51,7 +53,8 @@ export type Plugin =
   | ["sourcemaps", typeof sourcemaps, boolean?]
   | ["commonjs", typeof commonjs, boolean?]
   | ["resolve", typeof resolve, boolean?]
-  | ["autoExternal", typeof resolve, boolean?]
+  | ["autoExternal", typeof autoExternal, boolean?]
+  | ["visualizer", typeof visualizer, boolean?]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
