@@ -186,6 +186,9 @@ export function createPlugins(
           compress: {
             drop_console: false,
           },
+          format: {
+            comments: false
+          }
         }
       : {},
     process.env.NODE_ENV === "production"
