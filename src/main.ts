@@ -1,23 +1,29 @@
 import { includesAny, getPluginFunction } from "./utils"
 
-// common plugins
+//@ts-ignore
 import type resolve from "@rollup/plugin-node-resolve"
+//@ts-ignore
 import type commonjs from "@rollup/plugin-commonjs"
 import type { terser } from "rollup-plugin-terser"
 import type sourcemaps from "rollup-plugin-sourcemaps"
+// @ts-ignore
 import type replace from "@rollup/plugin-replace"
 // @ts-ignore
 import type autoExternal from "rollup-plugin-auto-external"
+//@ts-ignore
 import type typescript from "@rollup/plugin-typescript"
 // @ts-ignore
 import type coffeescript from "rollup-plugin-coffee-script"
 import type json from "@rollup/plugin-json"
 // @ts-ignore
 import type cssOnly from "rollup-plugin-css-only"
+//@ts-ignore
 import type babel from "@rollup/plugin-babel"
 import type { wasm } from "@rollup/plugin-wasm"
 // @ts-ignore
 import type { asc } from "rollup-plugin-assemblyscript"
+// @ts-ignore
+import type visualizer from "rollup-plugin-visualizer"
 
 export type Plugin =
   | "js"
@@ -34,6 +40,7 @@ export type Plugin =
   | "commonjs"
   | "resolve"
   | "autoExternal"
+  | "visualizer"
   | ["ts", typeof typescript, boolean?]
   | ["babel", typeof babel, boolean?]
   | ["coffee", typeof coffeescript, boolean?]
@@ -46,7 +53,8 @@ export type Plugin =
   | ["sourcemaps", typeof sourcemaps, boolean?]
   | ["commonjs", typeof commonjs, boolean?]
   | ["resolve", typeof resolve, boolean?]
-  | ["autoExternal", typeof resolve, boolean?]
+  | ["autoExternal", typeof autoExternal, boolean?]
+  | ["visualizer", typeof visualizer, boolean?]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
@@ -177,6 +185,9 @@ export function createPlugins(
           warnings: true,
           compress: {
             drop_console: false,
+          },
+          format: {
+            comments: false,
           },
         }
       : {},
