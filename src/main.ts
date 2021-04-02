@@ -223,6 +223,7 @@ export function createPlugins(
   return plugins
 }
 
+/** @deprecated use default Rollup syntax - this function will be removed in the next major version */
 export function createConfig(
   input: string | Array<string> = "src/main.ts",
   output_dir: string = "dist",
