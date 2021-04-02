@@ -67,6 +67,7 @@ coffee
 json
 css
 wasm
+as
 visualizer
 ```
 
@@ -112,40 +113,4 @@ For adding extra plugins, you can pass them in array to the second argument
 ```ts
 import multyentry from "@rollup/plugin-multi-entry"
 createPlugins(["ts"], [multyentry()])
-```
-
----
-
-### createConfig (not recommend)
-
-This is a simple wrapper around the rollup config, so it is recommended to use the default Rollup syntax.
-
-You can use `createConfig` to create the configs you need.
-
-```ts
-createConfig(
-  input: string | Array<string> = "src/main.ts", // bundle's input(s) file(s)
-  output_dir: string = "dist",	// where the bundle is stored
-  output_format = "cjs",  // output format (e.g. `cjs`, `es`, etc)
-  externals: Array<string> = ["atom", "electron"], // libraries you want to be external
-  plugins = createPlugins() // pass the plugins you created using `createPlugins()`
-)
-```
-
-An example that uses `createConfig`:
-
-```js
-const { createPlugins, createConfig } = require("rollup-plugin-atomic")
-
-const plugins = createPlugins(["ts", "babel"])
-
-const config = createConfig("src/main.ts", "dist", "cjs", ["atom", "electron", "node-pty-prebuilt-multiarch"], plugins)
-
-module.exports = config
-```
-
-You can create multiple configs using `createConfig` and export them as an array:
-
-```js
-module.exports = [config1, config2]
 ```
