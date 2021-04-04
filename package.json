@@ -71,7 +71,7 @@
   "devDependencies": {
     "assemblyscript": "*",
     "typescript": "^4.2.3",
-    "rollup": "2.42.1",
+    "rollup": "2.44.0",
     "prettier": "^2.2.1",
     "npm-check-updates": "11.3.0"
   }
