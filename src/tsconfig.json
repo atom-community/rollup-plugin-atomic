@@ -16,6 +16,7 @@
     "inlineSources": true,
     "preserveSymlinks": true,
     "removeComments": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "jsxFactory": "etch.dom",
     "lib": ["ES2018", "dom"],

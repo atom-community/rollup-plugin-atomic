@@ -8,19 +8,25 @@ Rollup plugin used in atom-ide-community
 npm install --save-dev rollup-plugin-atomic
 ```
 
-You should also install the peer dependencies:
+<details>
+<summary> You should have the peer dependencies. </summary>
+
+If using `npm`, the bundled Rollup, TypeScript, Babel, etc is hoisted automatically.
+
+If using `pnpm`, either add the following to your `.npmrc` to hoist the prettier bundled with the config
 
 ```
-"rollup": "^2"
+public-hoist-pattern[]=*
 ```
 
-and the following (only those that you use are needed):
+Or install these yourself in your `devDependencies`.
 
 ```
-"typescript": "^4",
-"coffeescript": "^1",
-"@babel/core": "^7"
+pnpm install -save-dev rollup
+pnpm install --save-dev @babel/core typescript coffeescript assemblyscript  # whichever you need
 ```
+
+</details>
 
 ## Usage
 

@@ -1,29 +1,37 @@
 import { includesAny, getPluginFunction } from "./utils"
 
-//@ts-ignore
 import type resolve from "@rollup/plugin-node-resolve"
-//@ts-ignore
+type RollupResolveOptions = Parameters<typeof resolve>[0]
 import type commonjs from "@rollup/plugin-commonjs"
+type RollupCommonjsOptions = Parameters<typeof commonjs>[0]
 import type { terser } from "rollup-plugin-terser"
+type RollupTerserOptions = Parameters<typeof terser>[0]
 import type sourcemaps from "rollup-plugin-sourcemaps"
-// @ts-ignore
+type RollupSourcemapsOptions = Parameters<typeof sourcemaps>[0]
 import type replace from "@rollup/plugin-replace"
+type RollupReplaceOptions = Parameters<typeof replace>[0]
 // @ts-ignore
 import type autoExternal from "rollup-plugin-auto-external"
-//@ts-ignore
+type RollupAutoexternalOptions = Parameters<typeof autoExternal>[0] & Record<string, any>
 import type typescript from "@rollup/plugin-typescript"
+type RollupTypeScriptOptions = Parameters<typeof typescript>[0]
 // @ts-ignore
 import type coffeescript from "rollup-plugin-coffee-script"
+type RollupCoffeeOptions = Parameters<typeof coffeescript>[0] & Record<string, any>
 import type json from "@rollup/plugin-json"
+type RollupJsonOptions = Parameters<typeof json>[0]
 // @ts-ignore
 import type cssOnly from "rollup-plugin-css-only"
-//@ts-ignore
+type RollupCssonlyOptions = Parameters<typeof cssOnly>[0] & Record<string, any>
 import type babel from "@rollup/plugin-babel"
+type RollupBabelOptions = Parameters<typeof babel>[0]
 import type { wasm } from "@rollup/plugin-wasm"
+type RollupWasmOptions = Parameters<typeof wasm>[0]
 // @ts-ignore
 import type { asc } from "rollup-plugin-assemblyscript"
-// @ts-ignore
+type RollupAscOptions = Parameters<typeof asc>[0] & Record<string, any>
 import type visualizer from "rollup-plugin-visualizer"
+type RollupVisualizerOptions = Parameters<typeof visualizer>[0]
 
 export type Plugin =
   | "js"
@@ -41,20 +49,20 @@ export type Plugin =
   | "resolve"
   | "autoExternal"
   | "visualizer"
-  | ["ts", typeof typescript, boolean?]
-  | ["babel", typeof babel, boolean?]
-  | ["coffee", typeof coffeescript, boolean?]
-  | ["json", typeof json, boolean?]
-  | ["css", typeof cssOnly, boolean?]
-  | ["wasm", typeof wasm, boolean?]
-  | ["as", typeof asc, boolean?]
-  | ["terser", typeof terser, boolean?]
-  | ["replace", typeof replace, boolean?]
-  | ["sourcemaps", typeof sourcemaps, boolean?]
-  | ["commonjs", typeof commonjs, boolean?]
-  | ["resolve", typeof resolve, boolean?]
-  | ["autoExternal", typeof autoExternal, boolean?]
-  | ["visualizer", typeof visualizer, boolean?]
+  | ["ts", RollupTypeScriptOptions, boolean?]
+  | ["babel", RollupBabelOptions, boolean?]
+  | ["coffee", RollupCoffeeOptions, boolean?]
+  | ["json", RollupJsonOptions, boolean?]
+  | ["css", RollupCssonlyOptions, boolean?]
+  | ["wasm", RollupWasmOptions, boolean?]
+  | ["as", RollupAscOptions, boolean?]
+  | ["terser", RollupTerserOptions, boolean?]
+  | ["replace", RollupReplaceOptions, boolean?]
+  | ["sourcemaps", RollupSourcemapsOptions, boolean?]
+  | ["commonjs", RollupCommonjsOptions, boolean?]
+  | ["resolve", RollupResolveOptions, boolean?]
+  | ["autoExternal", RollupAutoexternalOptions, boolean?]
+  | ["visualizer", RollupVisualizerOptions, boolean?]
 
 export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
@@ -68,7 +76,7 @@ export function createPlugins(
   pushPlugin(["ts", ".ts", "typescript", "TypeScript"], ["@rollup/plugin-typescript"], {
     noEmitOnError: false,
     module: "ESNext", // do not modify the imports
-  })
+  } as RollupTypeScriptOptions)
 
   // coffeescript
   pushPlugin(
@@ -77,7 +85,7 @@ export function createPlugins(
   )
 
   // json
-  pushPlugin(["json", ".json", "JSON"], ["@rollup/plugin-json"], { compact: true })
+  pushPlugin(["json", ".json", "JSON"], ["@rollup/plugin-json"], { compact: true } as RollupJsonOptions)
 
   // css only
   const cssIndex = includesAny(inputPluginsNames, ["css", ".css"])
@@ -90,7 +98,7 @@ export function createPlugins(
     `)
     if (typeof inputPluginsNames[cssIndex] === "string") {
       // plugin name only
-      plugins.push(cssOnly({ output: "dist/bundle.css" }))
+      plugins.push(cssOnly({ output: "dist/bundle.css" } as RollupCssonlyOptions))
     } else {
       // plugin with options
       plugins.push(cssOnly(inputPluginsNames[cssIndex][1]))
@@ -106,7 +114,7 @@ export function createPlugins(
   pushPlugin(["babel"], ["@rollup/plugin-babel", "babel"], {
     extensions: [".js", ".jsx", ".mjs", ".coffee"],
     babelHelpers: "bundled",
-  })
+  } as RollupBabelOptions)
 
   // wasm
   pushPlugin(["wasm", "WebAssembly"], ["@rollup/plugin-wasm", "wasm"])
@@ -115,7 +123,10 @@ export function createPlugins(
   pushPlugin(["as", "asc", "assemblyscript", "AssemblyScript"], ["rollup-plugin-assemblyscript", "asc"])
 
   // visualizer
-  pushPlugin(["visualizer", "plot"], ["rollup-plugin-visualizer"], { sourcemap: true, open: true })
+  pushPlugin(["visualizer", "plot"], ["rollup-plugin-visualizer"], {
+    sourcemap: true,
+    open: true,
+  } as RollupVisualizerOptions)
 
   // extra plugins
   if (extraPlugins !== undefined && typeof extraPlugins === "object" /*array*/) {
@@ -129,7 +140,7 @@ export function createPlugins(
   // Default plugins
 
   // loading files with existing source maps
-  pushPlugin(["sourcemaps"], ["rollup-plugin-sourcemaps"], {}, true)
+  pushPlugin(["sourcemaps"], ["rollup-plugin-sourcemaps"], {} as RollupSourcemapsOptions, true)
 
   pushPlugin(
     ["autoExternal"],
@@ -138,7 +149,7 @@ export function createPlugins(
       builtins: true,
       dependencies: false,
       peerDependencies: false,
-    },
+    } as RollupAutoexternalOptions,
     true
   )
 
@@ -209,7 +220,14 @@ export function createPlugins(
         plugins.push(pluginFunction(pluginDefaultOptions))
       } else if (typeof inputPluginsNames[index][2] === "boolean" && inputPluginsNames[index][2] === true) {
         // plugin with options that override pluginDefaultOptions
-        plugins.push(pluginFunction({ ...pluginDefaultOptions, ...inputPluginsNames[index][1] }))
+        const pluginOptions = inputPluginsNames[index][1]
+        plugins.push(
+          pluginFunction(
+            typeof pluginOptions === "object"
+              ? { ...pluginDefaultOptions, ...pluginOptions }
+              : { ...pluginDefaultOptions, pluginOptions }
+          )
+        )
       } else {
         // plugin with options
         plugins.push(pluginFunction(inputPluginsNames[index][1]))
