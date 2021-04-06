@@ -15,6 +15,7 @@ specifiers:
   csso-cli: ^3.0.0
   npm-check-updates: 11.3.0
   prettier: ^2.2.1
+  prettier-config-atomic: ^1.0.1
   rollup: 2.42.1
   rollup-plugin-assemblyscript: ^2.0.0
   rollup-plugin-auto-external: 2.0.0
@@ -56,6 +57,7 @@ optionalDependencies:
 devDependencies:
   npm-check-updates: 11.3.0
   prettier: 2.2.1
+  prettier-config-atomic: 1.0.1
   rollup: 2.42.1
 
 packages:
@@ -2270,6 +2272,12 @@ packages:
   /prepend-http/2.0.0:
     resolution: {integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=}
     engines: {node: '>=4'}
+    dev: true
+
+  /prettier-config-atomic/1.0.1:
+    resolution: {integrity: sha512-bNW8oMkuuVZI0OXEwwfbGGpdh1Jv4QfOzSMnmueBkSCYcCAnA9iHy+wRVsAeVRZPfB1hjqB9UtxGTnrflITtyg==}
+    dependencies:
+      prettier: 2.2.1
     dev: true
 
   /prettier/2.2.1:
