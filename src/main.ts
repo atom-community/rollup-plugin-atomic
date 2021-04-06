@@ -220,7 +220,14 @@ export function createPlugins(
         plugins.push(pluginFunction(pluginDefaultOptions))
       } else if (typeof inputPluginsNames[index][2] === "boolean" && inputPluginsNames[index][2] === true) {
         // plugin with options that override pluginDefaultOptions
-        plugins.push(pluginFunction({ ...pluginDefaultOptions, ...inputPluginsNames[index][1] }))
+        const pluginOptions = inputPluginsNames[index][1]
+        plugins.push(
+          pluginFunction(
+            typeof pluginOptions === "object"
+              ? { ...pluginDefaultOptions, ...pluginOptions }
+              : { ...pluginDefaultOptions, pluginOptions }
+          )
+        )
       } else {
         // plugin with options
         plugins.push(pluginFunction(inputPluginsNames[index][1]))
