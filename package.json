@@ -34,7 +34,7 @@
     "test.format": "prettier . --check",
     "lint": "eslint . --fix",
     "test.lint": "eslint .",
-    "tsc": "tsc -p src/tsconfig.json || echo done",
+    "tsc": "tsc -p src/tsconfig.json",
     "build": "npm run tsc",
     "prepare": "npm run build",
     "bump": "ncu -u -x coffeescript"

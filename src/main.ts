@@ -1,23 +1,18 @@
 import { includesAny, getPluginFunction } from "./utils"
 
-//@ts-ignore
 import type resolve from "@rollup/plugin-node-resolve"
-//@ts-ignore
 import type commonjs from "@rollup/plugin-commonjs"
 import type { terser } from "rollup-plugin-terser"
 import type sourcemaps from "rollup-plugin-sourcemaps"
-// @ts-ignore
 import type replace from "@rollup/plugin-replace"
 // @ts-ignore
 import type autoExternal from "rollup-plugin-auto-external"
-//@ts-ignore
 import type typescript from "@rollup/plugin-typescript"
 // @ts-ignore
 import type coffeescript from "rollup-plugin-coffee-script"
 import type json from "@rollup/plugin-json"
 // @ts-ignore
 import type cssOnly from "rollup-plugin-css-only"
-//@ts-ignore
 import type babel from "@rollup/plugin-babel"
 import type { wasm } from "@rollup/plugin-wasm"
 // @ts-ignore
