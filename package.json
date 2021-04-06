@@ -40,7 +40,7 @@
     "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {
-    "tslib": "^2.1.0",
+    "tslib": "^2.2.0",
     "@rollup/plugin-commonjs": "18.0.0",
     "@rollup/plugin-node-resolve": "11.2.1",
     "@rollup/plugin-typescript": "8.2.1",
@@ -56,7 +56,7 @@
     "csso-cli": "^3.0.0",
     "array-includes-any": "^2.7.3",
     "rollup-plugin-sourcemaps": "^0.6.3",
-    "rollup-plugin-visualizer": "^4.2.2",
+    "rollup-plugin-visualizer": "^5.3.0",
     "rollup-plugin-assemblyscript": "^2.0.0"
   },
   "peerDependencies": {

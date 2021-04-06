@@ -22,7 +22,6 @@ import type babel from "@rollup/plugin-babel"
 import type { wasm } from "@rollup/plugin-wasm"
 // @ts-ignore
 import type { asc } from "rollup-plugin-assemblyscript"
-// @ts-ignore
 import type visualizer from "rollup-plugin-visualizer"
 
 export type Plugin =
