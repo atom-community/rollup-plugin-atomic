@@ -14,9 +14,8 @@ specifiers:
   coffeescript: ^1
   csso-cli: ^3.0.0
   npm-check-updates: 11.3.0
-  prettier: ^2.2.1
   prettier-config-atomic: ^1.0.1
-  rollup: 2.42.1
+  rollup: '2'
   rollup-plugin-assemblyscript: ^2.0.0
   rollup-plugin-auto-external: 2.0.0
   rollup-plugin-coffee-script: 2.0.0
@@ -38,6 +37,7 @@ dependencies:
   '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
   array-includes-any: 2.7.3
   csso-cli: 3.0.0
+  rollup: 2.42.1
   rollup-plugin-assemblyscript: 2.0.0_assemblyscript@0.18.6
   rollup-plugin-auto-external: 2.0.0_rollup@2.42.1
   rollup-plugin-coffee-script: 2.0.0_coffeescript@1.12.7
@@ -56,9 +56,7 @@ optionalDependencies:
 
 devDependencies:
   npm-check-updates: 11.3.0
-  prettier: 2.2.1
   prettier-config-atomic: 1.0.1
-  rollup: 2.42.1
 
 packages:
 
@@ -1192,7 +1190,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
-    dev: true
+    dev: false
     optional: true
 
   /function-bind/1.1.1:
@@ -2628,7 +2626,7 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
+    dev: false
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
