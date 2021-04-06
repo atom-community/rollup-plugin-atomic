@@ -1,6 +1,10 @@
+type PluginOptions = Record<string, string> | undefined | unknown
 // function to check if the first array has any of the second array
 // first array can have `[string, object]` as their input
-export function includesAny(arr1: Array<string | [string, Object, boolean?]>, arr2: Array<string>): null | number {
+export function includesAny(
+  arr1: Array<string | [string, PluginOptions, boolean?]>,
+  arr2: Array<string>
+): null | number {
   for (let index = 0; index < arr1.length; index++) {
     const elm = arr1[index]
     let name: string
