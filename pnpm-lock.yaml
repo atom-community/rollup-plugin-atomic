@@ -13,8 +13,8 @@ specifiers:
   assemblyscript: '*'
   coffeescript: ^1
   csso-cli: ^3.0.0
-  npm-check-updates: 11.5.9
-  prettier-config-atomic: ^2.0.3
+  npm-check-updates: 11.5.11
+  prettier-config-atomic: ^2.0.5
   rollup: ^2
   rollup-plugin-assemblyscript: ^2.0.0
   rollup-plugin-auto-external: 2.0.0
@@ -55,8 +55,8 @@ optionalDependencies:
   typescript: 4.0.3
 
 devDependencies:
-  npm-check-updates: 11.5.9
-  prettier-config-atomic: 2.0.3
+  npm-check-updates: 11.5.11
+  prettier-config-atomic: 2.0.5
 
 packages:
 
@@ -2071,8 +2071,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/11.5.9:
-    resolution: {integrity: sha512-D+FgrBNtBJHl+D1n364CsQy/o6JIrh+7v+SXngNzAeyOVvc8w/1yr5pvqguVQWIvduC3HcRI87amkDp7ipzH7A==}
+  /npm-check-updates/11.5.11:
+    resolution: {integrity: sha512-tVd7bH96aBr6FDeUMeQbXkzbSGAq7CP6jQmX/pp1pkfjOHhcYKFqXpe56sRJkjMuZ1zkBC8hetaT7gPu9q776w==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
@@ -2357,16 +2357,16 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-config-atomic/2.0.3:
-    resolution: {integrity: sha512-t4ILoW9A6JrzPA64XtXcLxZ1DrsEh/7RuKblGrqy7aEBXbHOjBLfaIeOcQa1dRgZc9gphwB65FZxhcN9HfXBRw==}
+  /prettier-config-atomic/2.0.5:
+    resolution: {integrity: sha512-Lyu7SZLtAZWvc3h2tTQ4R/7DB6ludK/W2VJN+olGeSXbM7ulQ4PAnB0hwxHmj6CXJ6bcbeHXOZtQ/J9xh338BA==}
     dependencies:
-      prettier: 2.2.1
-      prettier-plugin-jsdoc: 0.3.22_prettier@2.2.1
+      prettier: 2.3.0
+      prettier-plugin-jsdoc: 0.3.22_prettier@2.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier-plugin-jsdoc/0.3.22_prettier@2.2.1:
+  /prettier-plugin-jsdoc/0.3.22_prettier@2.3.0:
     resolution: {integrity: sha512-8CuzIovyy0FQmt2QgrueYlnqOiYfC68TZsMQ5NRJJEb+JkWJekpO/3KWRJIkBQE/9dIT4Y0CVDqng6TqnoKJvA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -2376,13 +2376,13 @@ packages:
       comment-parser: 1.1.5
       linguist-languages: 7.14.0
       mdast-util-from-markdown: 0.8.5
-      prettier: 2.2.1
+      prettier: 2.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier/2.2.1:
-    resolution: {integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==}
+  /prettier/2.3.0:
+    resolution: {integrity: sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
