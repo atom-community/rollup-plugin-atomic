@@ -13,7 +13,7 @@ specifiers:
   assemblyscript: '*'
   coffeescript: ^1
   csso-cli: ^3.0.0
-  npm-check-updates: 11.5.11
+  npm-check-updates: 11.8.2
   prettier-config-atomic: ^2.0.5
   rollup: ^2
   rollup-plugin-assemblyscript: ^2.0.0
@@ -55,7 +55,7 @@ optionalDependencies:
   typescript: 4.0.3
 
 devDependencies:
-  npm-check-updates: 11.5.11
+  npm-check-updates: 11.8.2
   prettier-config-atomic: 2.0.5
 
 packages:
@@ -264,17 +264,16 @@ packages:
       fastq: 1.11.0
     dev: true
 
-  /@npmcli/git/2.0.4:
-    resolution: {integrity: sha512-OJZCmJ9DNn1cz9HPXXsPmUBnqaArot3CGYo63CyajHQk+g87rPXVOJByGsskQJhPsUUEXJcsZ2Q6bWd2jSwnBA==}
+  /@npmcli/git/2.1.0:
+    resolution: {integrity: sha512-/hBFX/QG1b+N7PZBFs0bi+evgRZcK9nWBxQKZkGoXUT5hJSwl5c4d7y8/hm+NQZRPhQ67RzFaj5UM9YeyKoryw==}
     dependencies:
       '@npmcli/promise-spawn': 1.3.2
       lru-cache: 6.0.0
       mkdirp: 1.0.4
-      npm-pick-manifest: 6.1.0
+      npm-pick-manifest: 6.1.1
       promise-inflight: 1.0.1
-      promise-retry: 1.1.1
+      promise-retry: 2.0.1
       semver: 7.3.5
-      unique-filename: 1.1.1
       which: 2.0.2
     dev: true
 
@@ -719,6 +718,29 @@ packages:
       unique-filename: 1.1.1
     dev: true
 
+  /cacache/15.2.0:
+    resolution: {integrity: sha512-uKoJSHmnrqXgthDFx/IU6ED/5xd+NNGe+Bb+kLZy7Ku4P+BaiWEUflAKPZ7eAzsYGcsAGASJZsybXp+quEcHTw==}
+    engines: {node: '>= 10'}
+    dependencies:
+      '@npmcli/move-file': 1.0.1
+      chownr: 2.0.0
+      fs-minipass: 2.1.0
+      glob: 7.1.6
+      infer-owner: 1.0.4
+      lru-cache: 6.0.0
+      minipass: 3.1.3
+      minipass-collect: 1.0.2
+      minipass-flush: 1.0.5
+      minipass-pipeline: 1.2.4
+      mkdirp: 1.0.4
+      p-map: 4.0.0
+      promise-inflight: 1.0.1
+      rimraf: 3.0.2
+      ssri: 8.0.1
+      tar: 6.1.0
+      unique-filename: 1.1.1
+    dev: true
+
   /cacheable-request/6.1.0:
     resolution: {integrity: sha512-Oj3cAGPCqOZX7Rz64Uny2GYAZNliQSqfbePrgAQ1wKAihYmCUnraBtJtKcGR4xz7wF+LoJC+ssFZvv5BgF9Igg==}
     engines: {node: '>=8'}
@@ -1077,10 +1099,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /err-code/1.1.2:
-    resolution: {integrity: sha1-BuARbTAo9q70gGhJ6w6mp0iuaWA=}
-    dev: true
-
   /err-code/2.0.3:
     resolution: {integrity: sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA==}
     dev: true
@@ -1302,8 +1320,8 @@ packages:
     dev: false
     optional: true
 
-  /globby/11.0.3:
-    resolution: {integrity: sha512-ffdmosjA807y7+lA1NM0jELARVmYul/715xiILEjo3hBLPTcirgQNnXECn5g3mtR8TOLCVbkfua1Hpen25/Xcg==}
+  /globby/11.0.4:
+    resolution: {integrity: sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==}
     engines: {node: '>=10'}
     dependencies:
       array-union: 2.1.0
@@ -1831,12 +1849,12 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /make-fetch-happen/8.0.10:
-    resolution: {integrity: sha512-jPLPKQjBmDLK5r1BdyDyNKBytmkv2AsDWm2CxHJh+fqhSmC9Pmb7RQxwOq8xQig9+AWIS49+51k4f6vDQ3VnrQ==}
+  /make-fetch-happen/9.0.3:
+    resolution: {integrity: sha512-uZ/9Cf2vKqsSWZyXhZ9wHHyckBrkntgbnqV68Bfe8zZenlf7D6yuGMXvHZQ+jSnzPkjosuNP1HGasj1J4h8OlQ==}
     engines: {node: '>= 10'}
     dependencies:
       agentkeepalive: 4.1.3
-      cacache: 15.0.5
+      cacache: 15.2.0
       http-cache-semantics: 4.1.0
       http-proxy-agent: 4.0.1
       https-proxy-agent: 5.0.0
@@ -1847,7 +1865,8 @@ packages:
       minipass-fetch: 1.3.2
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
-      promise-retry: 1.1.1
+      negotiator: 0.6.2
+      promise-retry: 2.0.1
       socks-proxy-agent: 5.0.0
       ssri: 8.0.1
     transitivePeerDependencies:
@@ -2021,6 +2040,11 @@ packages:
     hasBin: true
     dev: false
 
+  /negotiator/0.6.2:
+    resolution: {integrity: sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
   /node-gyp/7.1.1:
     resolution: {integrity: sha512-+7TqukzQVlne5EcLrw0Cdm8S26OC4H2mTb5wji4HlsocgB6a9aYHgqlKLKxRMlH/PWNyVQjyRjFhiet7+QZefA==}
     engines: {node: '>= 10.12.0'}
@@ -2071,8 +2095,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/11.5.11:
-    resolution: {integrity: sha512-tVd7bH96aBr6FDeUMeQbXkzbSGAq7CP6jQmX/pp1pkfjOHhcYKFqXpe56sRJkjMuZ1zkBC8hetaT7gPu9q776w==}
+  /npm-check-updates/11.8.2:
+    resolution: {integrity: sha512-+TWwhsFUJrar3z1KdCdwNLW6VQkqbU6pBZQtUVMfoAaeHq/L5SAnF6CwIzE/8hmKMNvxFAEe5Ow41ibhLa2iIg==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
@@ -2083,7 +2107,7 @@ packages:
       find-up: 5.0.0
       fp-and-or: 0.1.3
       get-stdin: 8.0.0
-      globby: 11.0.3
+      globby: 11.0.4
       hosted-git-info: 4.0.2
       json-parse-helpfulerror: 1.0.3
       jsonlines: 0.1.1
@@ -2092,7 +2116,7 @@ packages:
       mem: 8.1.1
       minimatch: 3.0.4
       p-map: 4.0.0
-      pacote: 11.3.3
+      pacote: 11.3.5
       parse-github-url: 1.0.2
       progress: 2.0.3
       prompts: 2.4.1
@@ -2127,6 +2151,15 @@ packages:
       validate-npm-package-name: 3.0.0
     dev: true
 
+  /npm-package-arg/8.1.5:
+    resolution: {integrity: sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==}
+    engines: {node: '>=10'}
+    dependencies:
+      hosted-git-info: 4.0.2
+      semver: 7.3.5
+      validate-npm-package-name: 3.0.0
+    dev: true
+
   /npm-packlist/2.1.4:
     resolution: {integrity: sha512-Qzg2pvXC9U4I4fLnUrBmcIT4x0woLtUgxUi9eC+Zrcv1Xx5eamytGAfbDWQ67j7xOcQ2VW1I3su9smVTIdu7Hw==}
     engines: {node: '>=10'}
@@ -2146,12 +2179,20 @@ packages:
       semver: 7.3.5
     dev: true
 
-  /npm-registry-fetch/10.1.1:
-    resolution: {integrity: sha512-F6a3l+ffCQ7hvvN16YG5bpm1rPZntCg66PLHDQ1apWJPOCUVHoKnL2w5fqEaTVhp42dmossTyXeR7hTGirfXrg==}
+  /npm-pick-manifest/6.1.1:
+    resolution: {integrity: sha512-dBsdBtORT84S8V8UTad1WlUyKIY9iMsAmqxHbLdeEeBNMLQDlDWWra3wYUx9EBEIiG/YwAy0XyNHDd2goAsfuA==}
+    dependencies:
+      npm-install-checks: 4.0.0
+      npm-normalize-package-bin: 1.0.1
+      npm-package-arg: 8.1.5
+      semver: 7.3.5
+    dev: true
+
+  /npm-registry-fetch/11.0.0:
+    resolution: {integrity: sha512-jmlgSxoDNuhAtxUIG6pVwwtz840i994dL14FoNVZisrmZW5kWd63IUTNv1m/hyRSGSqWjCUp/YZlS1BJyNp9XA==}
     engines: {node: '>=10'}
     dependencies:
-      lru-cache: 6.0.0
-      make-fetch-happen: 8.0.10
+      make-fetch-happen: 9.0.3
       minipass: 3.1.3
       minipass-fetch: 1.3.2
       minipass-json-stream: 1.0.1
@@ -2256,12 +2297,12 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /pacote/11.3.3:
-    resolution: {integrity: sha512-GQxBX+UcVZrrJRYMK2HoG+gPeSUX/rQhnbPkkGrCYa4n2F/bgClFPaMm0nsdnYrxnmUy85uMHoFXZ0jTD0drew==}
+  /pacote/11.3.5:
+    resolution: {integrity: sha512-fT375Yczn4zi+6Hkk2TBe1x1sP8FgFsEIZ2/iWaXY2r/NkhDJfxbcn5paz1+RTFCyNf+dPnaoBDJoAxXSU8Bkg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      '@npmcli/git': 2.0.4
+      '@npmcli/git': 2.1.0
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/promise-spawn': 1.3.2
       '@npmcli/run-script': 1.8.3
@@ -2274,7 +2315,7 @@ packages:
       npm-package-arg: 8.1.0
       npm-packlist: 2.1.4
       npm-pick-manifest: 6.1.0
-      npm-registry-fetch: 10.1.1
+      npm-registry-fetch: 11.0.0
       promise-retry: 2.0.1
       read-package-json-fast: 2.0.2
       rimraf: 3.0.2
@@ -2398,14 +2439,6 @@ packages:
 
   /promise-inflight/1.0.1:
     resolution: {integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=}
-    dev: true
-
-  /promise-retry/1.1.1:
-    resolution: {integrity: sha1-ZznpaOMFHaIM5kl/srUPaRHfPW0=}
-    engines: {node: '>=0.12'}
-    dependencies:
-      err-code: 1.1.2
-      retry: 0.10.1
     dev: true
 
   /promise-retry/2.0.1:
@@ -2597,10 +2630,6 @@ packages:
     resolution: {integrity: sha1-kYcg7ztjHFZCvgaPFa3lpG9Loec=}
     dependencies:
       lowercase-keys: 1.0.1
-    dev: true
-
-  /retry/0.10.1:
-    resolution: {integrity: sha1-52OI0heZLCUnUCQdPTlW/tmNj/Q=}
     dev: true
 
   /retry/0.12.0:
@@ -3131,6 +3160,7 @@ packages:
 
   /uuid/3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
     dev: true
 
