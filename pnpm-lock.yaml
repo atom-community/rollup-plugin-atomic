@@ -23,8 +23,8 @@ specifiers:
   rollup-plugin-execute: ^1.1.1
   rollup-plugin-sourcemaps: ^0.6.3
   rollup-plugin-terser: 7.0.2
-  rollup-plugin-visualizer: ^5.5.0
-  tslib: ^2.2.0
+  rollup-plugin-visualizer: ^5.5.2
+  tslib: ^2.3.0
   typescript: ^4
 
 dependencies:
@@ -33,7 +33,7 @@ dependencies:
   '@rollup/plugin-json': 4.1.0_rollup@2.42.1
   '@rollup/plugin-node-resolve': 13.0.0_rollup@2.42.1
   '@rollup/plugin-replace': 2.4.2_rollup@2.42.1
-  '@rollup/plugin-typescript': 8.2.1_019c60fbe556494f6f0ab45fbe141c6a
+  '@rollup/plugin-typescript': 8.2.1_32989fbdcb8a1742b273a2ae40f1018f
   '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
   array-includes-any: 2.7.3
   csso-cli: 3.0.0
@@ -45,8 +45,8 @@ dependencies:
   rollup-plugin-execute: 1.1.1
   rollup-plugin-sourcemaps: 0.6.3_rollup@2.42.1
   rollup-plugin-terser: 7.0.2_rollup@2.42.1
-  rollup-plugin-visualizer: 5.5.0_rollup@2.42.1
-  tslib: 2.2.0
+  rollup-plugin-visualizer: 5.5.2_rollup@2.42.1
+  tslib: 2.3.0
 
 optionalDependencies:
   '@babel/core': 7.12.3
@@ -382,7 +382,7 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-typescript/8.2.1_019c60fbe556494f6f0ab45fbe141c6a:
+  /@rollup/plugin-typescript/8.2.1_32989fbdcb8a1742b273a2ae40f1018f:
     resolution: {integrity: sha512-Qd2E1pleDR4bwyFxqbjt4eJf+wB0UKVMLc7/BAFDGVdAXQMCsD4DUv5/7/ww47BZCYxWtJqe1Lo0KVNswBJlRw==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -393,7 +393,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.42.1
       resolve: 1.19.0
       rollup: 2.42.1
-      tslib: 2.2.0
+      tslib: 2.3.0
       typescript: 4.0.3
     dev: false
 
@@ -2703,8 +2703,8 @@ packages:
       terser: 5.3.5
     dev: false
 
-  /rollup-plugin-visualizer/5.5.0_rollup@2.42.1:
-    resolution: {integrity: sha512-QUd0ZHGYn6rgogS+yzG08AvMk9J4kR1lO1cpLJCIAQhbyIGSBdqCddKWtxDsdmsxhkY/GCGw8CvoSB3MwMQOIQ==}
+  /rollup-plugin-visualizer/5.5.2_rollup@2.42.1:
+    resolution: {integrity: sha512-sh+P9KhuWTzeStyRA5yNZpoEFGuj5Ph34JLMa9+muhU8CneFf9L0XE4fmAwAojJLWp//uLUEyytBPSCdZEg5AA==}
     engines: {node: '>=10.16'}
     hasBin: true
     peerDependencies:
@@ -3035,8 +3035,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /tslib/2.2.0:
-    resolution: {integrity: sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==}
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
     dev: false
 
   /tunnel-agent/0.6.0:
