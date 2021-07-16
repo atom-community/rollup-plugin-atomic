@@ -182,6 +182,7 @@ export function createPlugins(
     ["@rollup/plugin-replace"],
     {
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+      preventAssignment: true,
     },
     true
   )
