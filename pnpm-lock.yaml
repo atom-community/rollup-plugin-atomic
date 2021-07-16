@@ -3,17 +3,17 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/core': ^7
   '@rollup/plugin-babel': ^5.3.0
-  '@rollup/plugin-commonjs': 19.0.0
+  '@rollup/plugin-commonjs': 19.0.1
   '@rollup/plugin-json': 4.1.0
-  '@rollup/plugin-node-resolve': 13.0.0
+  '@rollup/plugin-node-resolve': 13.0.2
   '@rollup/plugin-replace': ^2.4.2
-  '@rollup/plugin-typescript': 8.2.1
+  '@rollup/plugin-typescript': 8.2.3
   '@rollup/plugin-wasm': ^5.1.2
   array-includes-any: ^2.7.3
   assemblyscript: '*'
   coffeescript: ^1
   csso-cli: ^3.0.0
-  npm-check-updates: 11.5.11
+  npm-check-updates: 11.8.3
   prettier-config-atomic: ^2.0.5
   rollup: ^2
   rollup-plugin-assemblyscript: ^2.0.0
@@ -23,17 +23,17 @@ specifiers:
   rollup-plugin-execute: ^1.1.1
   rollup-plugin-sourcemaps: ^0.6.3
   rollup-plugin-terser: 7.0.2
-  rollup-plugin-visualizer: ^5.5.0
-  tslib: ^2.2.0
+  rollup-plugin-visualizer: ^5.5.2
+  tslib: ^2.3.0
   typescript: ^4
 
 dependencies:
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.12.3+rollup@2.42.1
-  '@rollup/plugin-commonjs': 19.0.0_rollup@2.42.1
+  '@rollup/plugin-commonjs': 19.0.1_rollup@2.42.1
   '@rollup/plugin-json': 4.1.0_rollup@2.42.1
-  '@rollup/plugin-node-resolve': 13.0.0_rollup@2.42.1
+  '@rollup/plugin-node-resolve': 13.0.2_rollup@2.42.1
   '@rollup/plugin-replace': 2.4.2_rollup@2.42.1
-  '@rollup/plugin-typescript': 8.2.1_019c60fbe556494f6f0ab45fbe141c6a
+  '@rollup/plugin-typescript': 8.2.3_32989fbdcb8a1742b273a2ae40f1018f
   '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
   array-includes-any: 2.7.3
   csso-cli: 3.0.0
@@ -45,8 +45,8 @@ dependencies:
   rollup-plugin-execute: 1.1.1
   rollup-plugin-sourcemaps: 0.6.3_rollup@2.42.1
   rollup-plugin-terser: 7.0.2_rollup@2.42.1
-  rollup-plugin-visualizer: 5.5.0_rollup@2.42.1
-  tslib: 2.2.0
+  rollup-plugin-visualizer: 5.5.2_rollup@2.42.1
+  tslib: 2.3.0
 
 optionalDependencies:
   '@babel/core': 7.12.3
@@ -55,7 +55,7 @@ optionalDependencies:
   typescript: 4.0.3
 
 devDependencies:
-  npm-check-updates: 11.5.11
+  npm-check-updates: 11.8.3
   prettier-config-atomic: 2.0.5
 
 packages:
@@ -264,17 +264,16 @@ packages:
       fastq: 1.11.0
     dev: true
 
-  /@npmcli/git/2.0.4:
-    resolution: {integrity: sha512-OJZCmJ9DNn1cz9HPXXsPmUBnqaArot3CGYo63CyajHQk+g87rPXVOJByGsskQJhPsUUEXJcsZ2Q6bWd2jSwnBA==}
+  /@npmcli/git/2.1.0:
+    resolution: {integrity: sha512-/hBFX/QG1b+N7PZBFs0bi+evgRZcK9nWBxQKZkGoXUT5hJSwl5c4d7y8/hm+NQZRPhQ67RzFaj5UM9YeyKoryw==}
     dependencies:
       '@npmcli/promise-spawn': 1.3.2
       lru-cache: 6.0.0
       mkdirp: 1.0.4
-      npm-pick-manifest: 6.1.0
+      npm-pick-manifest: 6.1.1
       promise-inflight: 1.0.1
-      promise-retry: 1.1.1
+      promise-retry: 2.0.1
       semver: 7.3.5
-      unique-filename: 1.1.1
       which: 2.0.2
     dev: true
 
@@ -332,8 +331,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-commonjs/19.0.0_rollup@2.42.1:
-    resolution: {integrity: sha512-adTpD6ATGbehdaQoZQ6ipDFhdjqsTgpOAhFiPwl+dzre4pPshsecptDPyEFb61JMJ1+mGljktaC4jI8ARMSNyw==}
+  /@rollup/plugin-commonjs/19.0.1_rollup@2.42.1:
+    resolution: {integrity: sha512-bRrPTIAsWw2LmEspEMvV9f+7N7CEQgZCj2Zi1F0e0P3+/tbjQaSNNVVRSRWVhuDagp8yjK5kbIut8KTPsseRhg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^2.38.3
@@ -357,8 +356,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-node-resolve/13.0.0_rollup@2.42.1:
-    resolution: {integrity: sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ==}
+  /@rollup/plugin-node-resolve/13.0.2_rollup@2.42.1:
+    resolution: {integrity: sha512-hv+eAMcA2hQ7qvPVcXbtIyc0dtue4jMyA2sCW4IMkrmh+SeDDEHg1MXTv65VPpKdtjvWzN3+4mHAEl4rT+zgzQ==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
@@ -382,8 +381,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-typescript/8.2.1_019c60fbe556494f6f0ab45fbe141c6a:
-    resolution: {integrity: sha512-Qd2E1pleDR4bwyFxqbjt4eJf+wB0UKVMLc7/BAFDGVdAXQMCsD4DUv5/7/ww47BZCYxWtJqe1Lo0KVNswBJlRw==}
+  /@rollup/plugin-typescript/8.2.3_32989fbdcb8a1742b273a2ae40f1018f:
+    resolution: {integrity: sha512-bSkd+DD3wP9OLU6lPet59B6jJF29/RlxHkbwvOVOcf1nk8eQYWw24HpldEdrPo/WG0QAPD7TqI7+2y5jtdqjww==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0
@@ -393,7 +392,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.42.1
       resolve: 1.19.0
       rollup: 2.42.1
-      tslib: 2.2.0
+      tslib: 2.3.0
       typescript: 4.0.3
     dev: false
 
@@ -698,6 +697,29 @@ packages:
 
   /cacache/15.0.5:
     resolution: {integrity: sha512-lloiL22n7sOjEEXdL8NAjTgv9a1u43xICE9/203qonkZUCj5X1UEWIdf2/Y0d6QcCtMzbKQyhrcDbdvlZTs/+A==}
+    engines: {node: '>= 10'}
+    dependencies:
+      '@npmcli/move-file': 1.0.1
+      chownr: 2.0.0
+      fs-minipass: 2.1.0
+      glob: 7.1.6
+      infer-owner: 1.0.4
+      lru-cache: 6.0.0
+      minipass: 3.1.3
+      minipass-collect: 1.0.2
+      minipass-flush: 1.0.5
+      minipass-pipeline: 1.2.4
+      mkdirp: 1.0.4
+      p-map: 4.0.0
+      promise-inflight: 1.0.1
+      rimraf: 3.0.2
+      ssri: 8.0.1
+      tar: 6.1.0
+      unique-filename: 1.1.1
+    dev: true
+
+  /cacache/15.2.0:
+    resolution: {integrity: sha512-uKoJSHmnrqXgthDFx/IU6ED/5xd+NNGe+Bb+kLZy7Ku4P+BaiWEUflAKPZ7eAzsYGcsAGASJZsybXp+quEcHTw==}
     engines: {node: '>= 10'}
     dependencies:
       '@npmcli/move-file': 1.0.1
@@ -1077,10 +1099,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /err-code/1.1.2:
-    resolution: {integrity: sha1-BuARbTAo9q70gGhJ6w6mp0iuaWA=}
-    dev: true
-
   /err-code/2.0.3:
     resolution: {integrity: sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA==}
     dev: true
@@ -1145,6 +1163,10 @@ packages:
 
   /fast-json-stable-stringify/2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
+    dev: true
+
+  /fast-memoize/2.5.2:
+    resolution: {integrity: sha512-Ue0LwpDYErFbmNnZSF0UH6eImUwDmogUO1jyE+JbN2gsQz/jICm1Ve7t9QT0rNSsfJt+Hs4/S3GnsDVjL4HVrw==}
     dev: true
 
   /fastq/1.11.0:
@@ -1302,8 +1324,8 @@ packages:
     dev: false
     optional: true
 
-  /globby/11.0.3:
-    resolution: {integrity: sha512-ffdmosjA807y7+lA1NM0jELARVmYul/715xiILEjo3hBLPTcirgQNnXECn5g3mtR8TOLCVbkfua1Hpen25/Xcg==}
+  /globby/11.0.4:
+    resolution: {integrity: sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==}
     engines: {node: '>=10'}
     dependencies:
       array-union: 2.1.0
@@ -1831,12 +1853,12 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /make-fetch-happen/8.0.10:
-    resolution: {integrity: sha512-jPLPKQjBmDLK5r1BdyDyNKBytmkv2AsDWm2CxHJh+fqhSmC9Pmb7RQxwOq8xQig9+AWIS49+51k4f6vDQ3VnrQ==}
+  /make-fetch-happen/9.0.4:
+    resolution: {integrity: sha512-sQWNKMYqSmbAGXqJg2jZ+PmHh5JAybvwu0xM8mZR/bsTjGiTASj3ldXJV7KFHy1k/IJIBkjxQFoWIVsv9+PQMg==}
     engines: {node: '>= 10'}
     dependencies:
       agentkeepalive: 4.1.3
-      cacache: 15.0.5
+      cacache: 15.2.0
       http-cache-semantics: 4.1.0
       http-proxy-agent: 4.0.1
       https-proxy-agent: 5.0.0
@@ -1847,18 +1869,12 @@ packages:
       minipass-fetch: 1.3.2
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
-      promise-retry: 1.1.1
+      negotiator: 0.6.2
+      promise-retry: 2.0.1
       socks-proxy-agent: 5.0.0
       ssri: 8.0.1
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /map-age-cleaner/0.1.3:
-    resolution: {integrity: sha512-bJzx6nMoP6PDLPBFmg7+xRKeFZvFboMrGlxmNj9ClvX53KrmvM5bXFXEWjbz4cz1AFn+jWJ9z/DJSz7hrs0w3w==}
-    engines: {node: '>=6'}
-    dependencies:
-      p-defer: 1.0.0
     dev: true
 
   /mdast-util-from-markdown/0.8.5:
@@ -1880,14 +1896,6 @@ packages:
   /mdn-data/2.0.6:
     resolution: {integrity: sha512-rQvjv71olwNHgiTbfPZFkJtjNMciWgswYeciZhtvWLO8bmX3TnhyA62I6sTWOyZssWHJJjY6/KiWwqQsWWsqOA==}
     dev: false
-
-  /mem/8.1.1:
-    resolution: {integrity: sha512-qFCFUDs7U3b8mBDPyz5EToEKoAkgCzqquIgi9nkkR9bixxOVOre+09lbuH7+9Kn2NFpm56M3GUWVbU2hQgdACA==}
-    engines: {node: '>=10'}
-    dependencies:
-      map-age-cleaner: 0.1.3
-      mimic-fn: 3.1.0
-    dev: true
 
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -1925,11 +1933,6 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.44.0
-    dev: true
-
-  /mimic-fn/3.1.0:
-    resolution: {integrity: sha512-Ysbi9uYW9hFyfrThdDEQuykN4Ey6BuwPD2kpI5ES/nFTDn/98yxYNLZJcgUAKPT/mcrLLKaGzJR9YVxJrIdASQ==}
-    engines: {node: '>=8'}
     dev: true
 
   /mimic-response/1.0.1:
@@ -2021,6 +2024,11 @@ packages:
     hasBin: true
     dev: false
 
+  /negotiator/0.6.2:
+    resolution: {integrity: sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==}
+    engines: {node: '>= 0.6'}
+    dev: true
+
   /node-gyp/7.1.1:
     resolution: {integrity: sha512-+7TqukzQVlne5EcLrw0Cdm8S26OC4H2mTb5wji4HlsocgB6a9aYHgqlKLKxRMlH/PWNyVQjyRjFhiet7+QZefA==}
     engines: {node: '>= 10.12.0'}
@@ -2071,8 +2079,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/11.5.11:
-    resolution: {integrity: sha512-tVd7bH96aBr6FDeUMeQbXkzbSGAq7CP6jQmX/pp1pkfjOHhcYKFqXpe56sRJkjMuZ1zkBC8hetaT7gPu9q776w==}
+  /npm-check-updates/11.8.3:
+    resolution: {integrity: sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
@@ -2080,19 +2088,19 @@ packages:
       cint: 8.2.1
       cli-table: 0.3.6
       commander: 6.2.1
+      fast-memoize: 2.5.2
       find-up: 5.0.0
       fp-and-or: 0.1.3
       get-stdin: 8.0.0
-      globby: 11.0.3
+      globby: 11.0.4
       hosted-git-info: 4.0.2
       json-parse-helpfulerror: 1.0.3
       jsonlines: 0.1.1
       libnpmconfig: 1.2.1
       lodash: 4.17.21
-      mem: 8.1.1
       minimatch: 3.0.4
       p-map: 4.0.0
-      pacote: 11.3.3
+      pacote: 11.3.5
       parse-github-url: 1.0.2
       progress: 2.0.3
       prompts: 2.4.1
@@ -2127,6 +2135,15 @@ packages:
       validate-npm-package-name: 3.0.0
     dev: true
 
+  /npm-package-arg/8.1.5:
+    resolution: {integrity: sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==}
+    engines: {node: '>=10'}
+    dependencies:
+      hosted-git-info: 4.0.2
+      semver: 7.3.5
+      validate-npm-package-name: 3.0.0
+    dev: true
+
   /npm-packlist/2.1.4:
     resolution: {integrity: sha512-Qzg2pvXC9U4I4fLnUrBmcIT4x0woLtUgxUi9eC+Zrcv1Xx5eamytGAfbDWQ67j7xOcQ2VW1I3su9smVTIdu7Hw==}
     engines: {node: '>=10'}
@@ -2146,12 +2163,20 @@ packages:
       semver: 7.3.5
     dev: true
 
-  /npm-registry-fetch/10.1.1:
-    resolution: {integrity: sha512-F6a3l+ffCQ7hvvN16YG5bpm1rPZntCg66PLHDQ1apWJPOCUVHoKnL2w5fqEaTVhp42dmossTyXeR7hTGirfXrg==}
+  /npm-pick-manifest/6.1.1:
+    resolution: {integrity: sha512-dBsdBtORT84S8V8UTad1WlUyKIY9iMsAmqxHbLdeEeBNMLQDlDWWra3wYUx9EBEIiG/YwAy0XyNHDd2goAsfuA==}
+    dependencies:
+      npm-install-checks: 4.0.0
+      npm-normalize-package-bin: 1.0.1
+      npm-package-arg: 8.1.5
+      semver: 7.3.5
+    dev: true
+
+  /npm-registry-fetch/11.0.0:
+    resolution: {integrity: sha512-jmlgSxoDNuhAtxUIG6pVwwtz840i994dL14FoNVZisrmZW5kWd63IUTNv1m/hyRSGSqWjCUp/YZlS1BJyNp9XA==}
     engines: {node: '>=10'}
     dependencies:
-      lru-cache: 6.0.0
-      make-fetch-happen: 8.0.10
+      make-fetch-happen: 9.0.4
       minipass: 3.1.3
       minipass-fetch: 1.3.2
       minipass-json-stream: 1.0.1
@@ -2199,11 +2224,6 @@ packages:
   /p-cancelable/1.1.0:
     resolution: {integrity: sha512-s73XxOZ4zpt1edZYZzvhqFa6uvQc1vwUa0K0BdtIZgQMAJj9IbebH+JkgKZc9h+B05PKHLOTl4ajG1BmNrVZlw==}
     engines: {node: '>=6'}
-    dev: true
-
-  /p-defer/1.0.0:
-    resolution: {integrity: sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=}
-    engines: {node: '>=4'}
     dev: true
 
   /p-limit/2.3.0:
@@ -2256,12 +2276,12 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /pacote/11.3.3:
-    resolution: {integrity: sha512-GQxBX+UcVZrrJRYMK2HoG+gPeSUX/rQhnbPkkGrCYa4n2F/bgClFPaMm0nsdnYrxnmUy85uMHoFXZ0jTD0drew==}
+  /pacote/11.3.5:
+    resolution: {integrity: sha512-fT375Yczn4zi+6Hkk2TBe1x1sP8FgFsEIZ2/iWaXY2r/NkhDJfxbcn5paz1+RTFCyNf+dPnaoBDJoAxXSU8Bkg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      '@npmcli/git': 2.0.4
+      '@npmcli/git': 2.1.0
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/promise-spawn': 1.3.2
       '@npmcli/run-script': 1.8.3
@@ -2274,7 +2294,7 @@ packages:
       npm-package-arg: 8.1.0
       npm-packlist: 2.1.4
       npm-pick-manifest: 6.1.0
-      npm-registry-fetch: 10.1.1
+      npm-registry-fetch: 11.0.0
       promise-retry: 2.0.1
       read-package-json-fast: 2.0.2
       rimraf: 3.0.2
@@ -2398,14 +2418,6 @@ packages:
 
   /promise-inflight/1.0.1:
     resolution: {integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=}
-    dev: true
-
-  /promise-retry/1.1.1:
-    resolution: {integrity: sha1-ZznpaOMFHaIM5kl/srUPaRHfPW0=}
-    engines: {node: '>=0.12'}
-    dependencies:
-      err-code: 1.1.2
-      retry: 0.10.1
     dev: true
 
   /promise-retry/2.0.1:
@@ -2599,10 +2611,6 @@ packages:
       lowercase-keys: 1.0.1
     dev: true
 
-  /retry/0.10.1:
-    resolution: {integrity: sha1-52OI0heZLCUnUCQdPTlW/tmNj/Q=}
-    dev: true
-
   /retry/0.12.0:
     resolution: {integrity: sha1-G0KmJmoh8HQh0bC1S33BZ7AcATs=}
     engines: {node: '>= 4'}
@@ -2703,8 +2711,8 @@ packages:
       terser: 5.3.5
     dev: false
 
-  /rollup-plugin-visualizer/5.5.0_rollup@2.42.1:
-    resolution: {integrity: sha512-QUd0ZHGYn6rgogS+yzG08AvMk9J4kR1lO1cpLJCIAQhbyIGSBdqCddKWtxDsdmsxhkY/GCGw8CvoSB3MwMQOIQ==}
+  /rollup-plugin-visualizer/5.5.2_rollup@2.42.1:
+    resolution: {integrity: sha512-sh+P9KhuWTzeStyRA5yNZpoEFGuj5Ph34JLMa9+muhU8CneFf9L0XE4fmAwAojJLWp//uLUEyytBPSCdZEg5AA==}
     engines: {node: '>=10.16'}
     hasBin: true
     peerDependencies:
@@ -3035,8 +3043,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /tslib/2.2.0:
-    resolution: {integrity: sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==}
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
     dev: false
 
   /tunnel-agent/0.6.0:
@@ -3131,6 +3139,7 @@ packages:
 
   /uuid/3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
     dev: true
 
