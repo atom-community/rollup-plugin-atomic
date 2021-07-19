@@ -1,4 +1,4 @@
-import { includesAny, getPluginFunction } from "./utils"
+import { includesAny, getPluginFunction, loadConfigFile } from "./utils"
 
 import type resolve from "@rollup/plugin-node-resolve"
 type RollupResolveOptions = Parameters<typeof resolve>[0]
@@ -68,6 +68,8 @@ export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
   extraPlugins?: Array<any>
 ) {
+  const configDir = require.main?.filename?.replace(/node_modules.*/, "")
+
   let plugins = []
 
   // language specific
@@ -188,9 +190,7 @@ export function createPlugins(
   )
 
   // terser
-  pushPlugin(
-    ["terser"],
-    ["rollup-plugin-terser", "terser"],
+  let terserOptions = (
     process.env.NODE_ENV === "production"
       ? {
           ecma: 2018,
@@ -202,9 +202,15 @@ export function createPlugins(
             comments: false,
           },
         }
-      : {},
-    process.env.NODE_ENV === "production"
-  )
+      : {}
+  ) as RollupTerserOptions
+  if (typeof configDir === "string") {
+    const maybeConfig = loadConfigFile(configDir, [".terserrc.js", ".terserrc"])
+    if (maybeConfig !== null) {
+      terserOptions = maybeConfig as RollupTerserOptions
+    }
+  }
+  pushPlugin(["terser"], ["rollup-plugin-terser", "terser"], terserOptions, process.env.NODE_ENV === "production")
 
   // utility function that pushes a plugin
   function pushPlugin(

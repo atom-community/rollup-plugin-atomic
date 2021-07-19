@@ -30,3 +30,23 @@ export function getPluginFunction(modul: any, prop?: string) {
     return pluginFunction
   }
 }
+
+import { existsSync } from "fs"
+import { join } from "path"
+
+export function loadConfigFile(configDir: string, configFiles: Array<string>) {
+  for (const configFile of configFiles) {
+    const terserConfigFile = join(configDir, configFile)
+    if (existsSync(terserConfigFile)) {
+      const loadedTerserConfigFile = require(terserConfigFile) as { default: Record<any, any> } | Record<any, any>
+      if (loadedTerserConfigFile !== undefined) {
+        if ("default" in loadedTerserConfigFile) {
+          return loadedTerserConfigFile.default
+        } else {
+          return loadedTerserConfigFile
+        }
+      }
+    }
+  }
+  return null
+}
