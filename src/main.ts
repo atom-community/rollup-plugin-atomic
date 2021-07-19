@@ -1,4 +1,4 @@
-import { includesAny, getPluginFunction } from "./utils"
+import { includesAny, getPluginFunction, loadConfigFile } from "./utils"
 
 import type resolve from "@rollup/plugin-node-resolve"
 type RollupResolveOptions = Parameters<typeof resolve>[0]
@@ -32,9 +32,6 @@ import type { asc } from "rollup-plugin-assemblyscript"
 type RollupAscOptions = Parameters<typeof asc>[0] & Record<string, any>
 import type visualizer from "rollup-plugin-visualizer"
 type RollupVisualizerOptions = Parameters<typeof visualizer>[0]
-
-import { existsSync } from "fs"
-import { join } from "path"
 
 export type Plugin =
   | "js"
@@ -208,16 +205,9 @@ export function createPlugins(
       : {}
   ) as RollupTerserOptions
   if (typeof configDir === "string") {
-    const terserConfigFile = join(configDir, ".terserrc.js")
-    if (existsSync(terserConfigFile)) {
-      const loadedTerserConfigFile = require(terserConfigFile) as { default: RollupTerserOptions } | RollupTerserOptions
-      if (loadedTerserConfigFile !== undefined) {
-        if ("default" in loadedTerserConfigFile) {
-          terserOptions = loadedTerserConfigFile.default
-        } else {
-          terserOptions = loadedTerserConfigFile
-        }
-      }
+    const maybeConfig = loadConfigFile(configDir, [".terserrc.js", ".terserrc"])
+    if (maybeConfig !== null) {
+      terserOptions = maybeConfig as RollupTerserOptions
     }
   }
   pushPlugin(["terser"], ["rollup-plugin-terser", "terser"], terserOptions, process.env.NODE_ENV === "production")
