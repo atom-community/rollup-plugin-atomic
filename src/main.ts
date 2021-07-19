@@ -33,6 +33,9 @@ type RollupAscOptions = Parameters<typeof asc>[0] & Record<string, any>
 import type visualizer from "rollup-plugin-visualizer"
 type RollupVisualizerOptions = Parameters<typeof visualizer>[0]
 
+import { existsSync } from "fs"
+import { join } from "path"
+
 export type Plugin =
   | "js"
   | "ts"
@@ -68,6 +71,8 @@ export function createPlugins(
   inputPluginsNames: Array<Plugin> = ["ts", "js", "json", "coffee"],
   extraPlugins?: Array<any>
 ) {
+  const configDir = require.main?.filename?.replace(/node_modules.*/, "")
+
   let plugins = []
 
   // language specific
@@ -188,9 +193,7 @@ export function createPlugins(
   )
 
   // terser
-  pushPlugin(
-    ["terser"],
-    ["rollup-plugin-terser", "terser"],
+  let terserOptions = (
     process.env.NODE_ENV === "production"
       ? {
           ecma: 2018,
@@ -202,9 +205,22 @@ export function createPlugins(
             comments: false,
           },
         }
-      : {},
-    process.env.NODE_ENV === "production"
-  )
+      : {}
+  ) as RollupTerserOptions
+  if (typeof configDir === "string") {
+    const terserConfigFile = join(configDir, ".terserrc.js")
+    if (existsSync(terserConfigFile)) {
+      const loadedTerserConfigFile = require(terserConfigFile) as { default: RollupTerserOptions } | RollupTerserOptions
+      if (loadedTerserConfigFile !== undefined) {
+        if ("default" in loadedTerserConfigFile) {
+          terserOptions = loadedTerserConfigFile.default
+        } else {
+          terserOptions = loadedTerserConfigFile
+        }
+      }
+    }
+  }
+  pushPlugin(["terser"], ["rollup-plugin-terser", "terser"], terserOptions, process.env.NODE_ENV === "production")
 
   // utility function that pushes a plugin
   function pushPlugin(
