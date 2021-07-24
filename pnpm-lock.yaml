@@ -1,62 +1,62 @@
 lockfileVersion: 5.3
 
-specifiers:
-  '@babel/core': ^7
-  '@rollup/plugin-babel': ^5.3.0
-  '@rollup/plugin-commonjs': 19.0.1
-  '@rollup/plugin-json': 4.1.0
-  '@rollup/plugin-node-resolve': 13.0.2
-  '@rollup/plugin-replace': ^2.4.2
-  '@rollup/plugin-typescript': 8.2.3
-  '@rollup/plugin-wasm': ^5.1.2
-  array-includes-any: ^2.7.3
-  assemblyscript: '*'
-  coffeescript: ^1
-  csso-cli: ^3.0.0
-  npm-check-updates: 11.8.3
-  prettier-config-atomic: ^2.0.5
-  rollup: ^2
-  rollup-plugin-assemblyscript: ^2.0.0
-  rollup-plugin-auto-external: 2.0.0
-  rollup-plugin-coffee-script: 2.0.0
-  rollup-plugin-css-only: ^3.1.0
-  rollup-plugin-execute: ^1.1.1
-  rollup-plugin-sourcemaps: ^0.6.3
-  rollup-plugin-terser: 7.0.2
-  rollup-plugin-visualizer: ^5.5.2
-  tslib: ^2.3.0
-  typescript: ^4
+importers:
 
-dependencies:
-  '@rollup/plugin-babel': 5.3.0_@babel+core@7.12.3+rollup@2.42.1
-  '@rollup/plugin-commonjs': 19.0.1_rollup@2.42.1
-  '@rollup/plugin-json': 4.1.0_rollup@2.42.1
-  '@rollup/plugin-node-resolve': 13.0.2_rollup@2.42.1
-  '@rollup/plugin-replace': 2.4.2_rollup@2.42.1
-  '@rollup/plugin-typescript': 8.2.3_32989fbdcb8a1742b273a2ae40f1018f
-  '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
-  array-includes-any: 2.7.3
-  csso-cli: 3.0.0
-  rollup: 2.42.1
-  rollup-plugin-assemblyscript: 2.0.0_assemblyscript@0.18.6
-  rollup-plugin-auto-external: 2.0.0_rollup@2.42.1
-  rollup-plugin-coffee-script: 2.0.0_coffeescript@1.12.7
-  rollup-plugin-css-only: 3.1.0_rollup@2.42.1
-  rollup-plugin-execute: 1.1.1
-  rollup-plugin-sourcemaps: 0.6.3_rollup@2.42.1
-  rollup-plugin-terser: 7.0.2_rollup@2.42.1
-  rollup-plugin-visualizer: 5.5.2_rollup@2.42.1
-  tslib: 2.3.0
-
-optionalDependencies:
-  '@babel/core': 7.12.3
-  assemblyscript: 0.18.6
-  coffeescript: 1.12.7
-  typescript: 4.0.3
-
-devDependencies:
-  npm-check-updates: 11.8.3
-  prettier-config-atomic: 2.0.5
+  .:
+    specifiers:
+      '@babel/core': ^7
+      '@rollup/plugin-babel': ^5.3.0
+      '@rollup/plugin-commonjs': 19.0.1
+      '@rollup/plugin-json': 4.1.0
+      '@rollup/plugin-node-resolve': 13.0.3
+      '@rollup/plugin-replace': ^3.0.0
+      '@rollup/plugin-typescript': 8.2.3
+      '@rollup/plugin-wasm': ^5.1.2
+      array-includes-any: ^2.7.3
+      assemblyscript: '*'
+      coffeescript: ^1
+      csso-cli: ^3.0.0
+      npm-check-updates: 11.8.3
+      prettier-config-atomic: ^2.0.5
+      rollup: ^2
+      rollup-plugin-assemblyscript: ^2.0.0
+      rollup-plugin-auto-external: 2.0.0
+      rollup-plugin-coffee-script: 2.0.0
+      rollup-plugin-css-only: ^3.1.0
+      rollup-plugin-execute: ^1.1.1
+      rollup-plugin-sourcemaps: ^0.6.3
+      rollup-plugin-terser: 7.0.2
+      rollup-plugin-visualizer: ^5.5.2
+      tslib: ^2.3.0
+      typescript: ^4
+    dependencies:
+      '@rollup/plugin-babel': 5.3.0_@babel+core@7.12.3+rollup@2.42.1
+      '@rollup/plugin-commonjs': 19.0.1_rollup@2.42.1
+      '@rollup/plugin-json': 4.1.0_rollup@2.42.1
+      '@rollup/plugin-node-resolve': 13.0.3_rollup@2.42.1
+      '@rollup/plugin-replace': 3.0.0_rollup@2.42.1
+      '@rollup/plugin-typescript': 8.2.3_32989fbdcb8a1742b273a2ae40f1018f
+      '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
+      array-includes-any: 2.7.3
+      csso-cli: 3.0.0
+      rollup: 2.42.1
+      rollup-plugin-assemblyscript: 2.0.0_assemblyscript@0.18.6
+      rollup-plugin-auto-external: 2.0.0_rollup@2.42.1
+      rollup-plugin-coffee-script: 2.0.0_coffeescript@1.12.7
+      rollup-plugin-css-only: 3.1.0_rollup@2.42.1
+      rollup-plugin-execute: 1.1.1
+      rollup-plugin-sourcemaps: 0.6.3_rollup@2.42.1
+      rollup-plugin-terser: 7.0.2_rollup@2.42.1
+      rollup-plugin-visualizer: 5.5.2_rollup@2.42.1
+      tslib: 2.3.0
+    optionalDependencies:
+      '@babel/core': 7.12.3
+      assemblyscript: 0.18.6
+      coffeescript: 1.12.7
+      typescript: 4.0.3
+    devDependencies:
+      npm-check-updates: 11.8.3
+      prettier-config-atomic: 2.0.5
 
 packages:
 
@@ -356,8 +356,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-node-resolve/13.0.2_rollup@2.42.1:
-    resolution: {integrity: sha512-hv+eAMcA2hQ7qvPVcXbtIyc0dtue4jMyA2sCW4IMkrmh+SeDDEHg1MXTv65VPpKdtjvWzN3+4mHAEl4rT+zgzQ==}
+  /@rollup/plugin-node-resolve/13.0.3_rollup@2.42.1:
+    resolution: {integrity: sha512-Wbq294ydDlsliRlVTZ2QZcdtIiY8t6EeuUKzXw5j5BLQ0i2hcvfGOwol1FDm77lp89MmyNJT6aQWsT0jAAfaQw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
@@ -371,8 +371,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-replace/2.4.2_rollup@2.42.1:
-    resolution: {integrity: sha512-IGcu+cydlUMZ5En85jxHH4qj2hta/11BHq95iHEyb2sbgiN0eCdzvUcHw5gt9pBL5lTi4JDYJ1acCoMGpTvEZg==}
+  /@rollup/plugin-replace/3.0.0_rollup@2.42.1:
+    resolution: {integrity: sha512-3c7JCbMuYXM4PbPWT4+m/4Y6U60SgsnDT/cCyAyUKwFHg7pTSfsSQzIpETha3a3ig6OdOKzZz87D9ZXIK3qsDg==}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
