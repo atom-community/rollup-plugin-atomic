@@ -57,10 +57,7 @@ module.exports = {
 use `createPlugins` to create the plugins you need.
 
 ```ts
-createPlugins(
-  inputPlugins: Array<Plugin> = ["ts", "babel", "json", "coffee"], // languages/plugins you use
-  extraPlugins?: Array<any>	// pass any extra plugins functions as an array like `[multientry()]`
-)
+createPlugins(inputPlugins: Array<Plugin> = ["ts", "babel", "json", "coffee"])
 ```
 
 which `inputPlugins` is among these:
@@ -114,6 +111,7 @@ Passing false as the third argument results in discarding the `rollup-config-ato
 For adding extra plugins, you can simply concatenate your plugins with the output of `createPlugins`
 
 ```ts
-import multyentry from "@rollup/plugin-multi-entry"
+import multyentry from "@rollup/plugin-multi-entry" // an extra plugin
+
 const plugins = [...createPlugins(["ts"]), multyentry()]
 ```
