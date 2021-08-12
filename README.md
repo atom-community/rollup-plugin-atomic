@@ -88,35 +88,32 @@ terser (in production)
 replace (in production)
 ```
 
-### Override Default Options for the plugins `[name, overriddenOptions, true]`
+### Override Default Options for the plugins `[name, overriddenOptions]`
 
-You can pass an input plugin with the overridden options using the `[name, overriddenOptions, true]` syntax.
+You can pass an input plugin with the overridden options using the `[name, overriddenOptions]` syntax.
+
+```ts
+const plugins = createPlugins([["ts", { tsconfig: "./lib/tsconfig.json" }], "js"])
+```
+
+### Completely New Options for the plugins `[name, newOptions, false]`
+
+You can pass an input plugin with their supported option using the `[name, newOptions, false]` syntax:
 
 ```ts
 const plugins = createPlugins([
-  ["ts", { tsconfig: "./lib/tsconfig.json" }, true], // third element makes the config merge to and override the default options
+  ["ts", { tsconfig: "./lib/tsconfig.json", noEmitOnError: false, module: "ESNext" }, false],
   "js",
 ])
 ```
 
-The difference with the next syntax is that these are merged into the default options and if there is a config with the same name, they override it, but the next syntax completely replaces the default options.
-
-### Completely New Options for the plugins `[name, newOptions]`
-
-You can pass an input plugin with their supported option using the `[name, newOptions]` syntax:
-
-```ts
-const plugins = createPlugins([
-  ["ts", { tsconfig: "./lib/tsconfig.json", noEmitOnError: false, module: "ESNext" }],
-  "js",
-])
-```
+Passing false as the third argument results in discarding the `rollup-config-atomic` built-in options.
 
 ### Adding New Extra Plugins
 
-For adding extra plugins, you can pass them in array to the second argument
+For adding extra plugins, you can simply concatenate your plugins with the output of `createPlugins`
 
 ```ts
 import multyentry from "@rollup/plugin-multi-entry"
-createPlugins(["ts"], [multyentry()])
+const plugins = [...createPlugins(["ts"]), multyentry()]
 ```

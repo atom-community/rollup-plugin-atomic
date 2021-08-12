@@ -132,6 +132,9 @@ export function createPlugins(
 
   // extra plugins
   if (extraPlugins !== undefined && typeof extraPlugins === "object" /*array*/) {
+    console.warn(
+      "Passing extra plugins to `createPlugins` is deprecated. Instead concatenate the output of `createPlugins` with your extra plugins."
+    )
     try {
       plugins.push(...extraPlugins)
     } catch (e) {
@@ -225,7 +228,10 @@ export function createPlugins(
       if (typeof inputPluginsNames[index] === "string") {
         // plugin name only
         plugins.push(pluginFunction(pluginDefaultOptions))
-      } else if (typeof inputPluginsNames[index][2] === "boolean" && inputPluginsNames[index][2] === true) {
+      } else if (inputPluginsNames[index].length == 3 && inputPluginsNames[index][2] === false) {
+        // plugin with options from scratch
+        plugins.push(pluginFunction(inputPluginsNames[index][1]))
+      } else {
         // plugin with options that override pluginDefaultOptions
         const pluginOptions = inputPluginsNames[index][1]
         plugins.push(
@@ -235,9 +241,6 @@ export function createPlugins(
               : { ...pluginDefaultOptions, pluginOptions }
           )
         )
-      } else {
-        // plugin with options
-        plugins.push(pluginFunction(inputPluginsNames[index][1]))
       }
     } else if (includeByDefault) {
       const pluginFunction = getPluginFunction(require(moduleName), prop)
