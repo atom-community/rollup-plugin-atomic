@@ -104,7 +104,7 @@ const plugins = createPlugins([
 ])
 ```
 
-Passing false as the third argument results in discarding the `rollup-config-atomic` built-in options.
+Passing false as the third argument results in discarding the built-in options of `rollup-config-atomic` for this plugin.
 
 ### Adding New Extra Plugins
 
