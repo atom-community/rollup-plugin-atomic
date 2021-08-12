@@ -250,26 +250,3 @@ export function createPlugins(
 
   return plugins
 }
-
-/** @deprecated Use default Rollup syntax - this function will be removed in the next major version */
-export function createConfig(
-  input: string | Array<string> = "src/main.ts",
-  output_dir: string = "dist",
-  output_format = "cjs",
-  externals: Array<string> = ["atom", "electron"],
-  plugins = createPlugins()
-) {
-  return {
-    input: input,
-    output: [
-      {
-        dir: output_dir,
-        format: output_format,
-        sourcemap: true,
-      },
-    ],
-    // loaded externally
-    external: externals,
-    plugins: plugins,
-  }
-}
