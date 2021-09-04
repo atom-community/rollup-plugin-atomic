@@ -16,7 +16,7 @@ importers:
       assemblyscript: '*'
       coffeescript: ^1
       csso-cli: ^3.0.0
-      npm-check-updates: 11.8.3
+      npm-check-updates: 11.8.5
       prettier-config-atomic: ^2.0.5
       rollup: ^2
       rollup-plugin-assemblyscript: ^2.0.0
@@ -27,7 +27,7 @@ importers:
       rollup-plugin-sourcemaps: ^0.6.3
       rollup-plugin-terser: 7.0.2
       rollup-plugin-visualizer: ^5.5.2
-      tslib: ^2.3.0
+      tslib: ^2.3.1
       typescript: ^4
     dependencies:
       '@rollup/plugin-babel': 5.3.0_@babel+core@7.12.3+rollup@2.42.1
@@ -35,7 +35,7 @@ importers:
       '@rollup/plugin-json': 4.1.0_rollup@2.42.1
       '@rollup/plugin-node-resolve': 13.0.4_rollup@2.42.1
       '@rollup/plugin-replace': 3.0.0_rollup@2.42.1
-      '@rollup/plugin-typescript': 8.2.5_32989fbdcb8a1742b273a2ae40f1018f
+      '@rollup/plugin-typescript': 8.2.5_b53c90e70346949ca6a519c486064823
       '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
       array-includes-any: 2.7.3
       csso-cli: 3.0.0
@@ -48,14 +48,14 @@ importers:
       rollup-plugin-sourcemaps: 0.6.3_rollup@2.42.1
       rollup-plugin-terser: 7.0.2_rollup@2.42.1
       rollup-plugin-visualizer: 5.5.2_rollup@2.42.1
-      tslib: 2.3.0
+      tslib: 2.3.1
     optionalDependencies:
       '@babel/core': 7.12.3
       assemblyscript: 0.18.6
       coffeescript: 1.12.7
       typescript: 4.0.3
     devDependencies:
-      npm-check-updates: 11.8.3
+      npm-check-updates: 11.8.5
       prettier-config-atomic: 2.0.5
 
 packages:
@@ -381,7 +381,7 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-typescript/8.2.5_32989fbdcb8a1742b273a2ae40f1018f:
+  /@rollup/plugin-typescript/8.2.5_b53c90e70346949ca6a519c486064823:
     resolution: {integrity: sha512-QL/LvDol/PAGB2O0S7/+q2HpSUNodpw7z6nGn9BfoVCPOZ0r4EALrojFU29Bkoi2Hr2jgTocTejJ5GGWZfOxbQ==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -392,7 +392,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.42.1
       resolve: 1.19.0
       rollup: 2.42.1
-      tslib: 2.3.0
+      tslib: 2.3.1
       typescript: 4.0.3
     dev: false
 
@@ -651,7 +651,7 @@ packages:
     dependencies:
       ansi-align: 3.0.0
       camelcase: 6.2.0
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-boxes: 2.2.1
       string-width: 4.2.1
       type-fest: 0.20.2
@@ -694,29 +694,6 @@ packages:
     dependencies:
       semver: 6.3.0
     dev: false
-
-  /cacache/15.0.5:
-    resolution: {integrity: sha512-lloiL22n7sOjEEXdL8NAjTgv9a1u43xICE9/203qonkZUCj5X1UEWIdf2/Y0d6QcCtMzbKQyhrcDbdvlZTs/+A==}
-    engines: {node: '>= 10'}
-    dependencies:
-      '@npmcli/move-file': 1.0.1
-      chownr: 2.0.0
-      fs-minipass: 2.1.0
-      glob: 7.1.6
-      infer-owner: 1.0.4
-      lru-cache: 6.0.0
-      minipass: 3.1.3
-      minipass-collect: 1.0.2
-      minipass-flush: 1.0.5
-      minipass-pipeline: 1.2.4
-      mkdirp: 1.0.4
-      p-map: 4.0.0
-      promise-inflight: 1.0.1
-      rimraf: 3.0.2
-      ssri: 8.0.1
-      tar: 6.1.0
-      unique-filename: 1.1.1
-    dev: true
 
   /cacache/15.2.0:
     resolution: {integrity: sha512-uKoJSHmnrqXgthDFx/IU6ED/5xd+NNGe+Bb+kLZy7Ku4P+BaiWEUflAKPZ7eAzsYGcsAGASJZsybXp+quEcHTw==}
@@ -783,8 +760,8 @@ packages:
       supports-color: 5.5.0
     dev: false
 
-  /chalk/4.1.1:
-    resolution: {integrity: sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==}
+  /chalk/4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
     dependencies:
       ansi-styles: 4.3.0
@@ -1232,6 +1209,7 @@ packages:
     resolution: {integrity: sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    deprecated: '"Please update to latest v2.3 or v2.2"'
     dev: false
     optional: true
 
@@ -1405,13 +1383,6 @@ packages:
   /hosted-git-info/2.8.8:
     resolution: {integrity: sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==}
     dev: false
-
-  /hosted-git-info/3.0.8:
-    resolution: {integrity: sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==}
-    engines: {node: '>=10'}
-    dependencies:
-      lru-cache: 6.0.0
-    dev: true
 
   /hosted-git-info/4.0.2:
     resolution: {integrity: sha512-c9OGXbZ3guC/xOlCg1Ci/VgWlwsqDv1yMQL1CWqXDL0hDjXuNcq0zuR4xqPSuasI3kqFDhqSyTjREz5gzq0fXg==}
@@ -2079,12 +2050,12 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/11.8.3:
-    resolution: {integrity: sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==}
+  /npm-check-updates/11.8.5:
+    resolution: {integrity: sha512-IYSHjlWe8UEugDy7X0qjBeJwcni4DlcWdBK4QQEbwgkNlEDlXyd4yQJYWFumKaJzrp/n5/EcvaboXsBD1Er/pw==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
-      chalk: 4.1.1
+      chalk: 4.1.2
       cint: 8.2.1
       cli-table: 0.3.6
       commander: 6.2.1
@@ -2126,15 +2097,6 @@ packages:
     resolution: {integrity: sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==}
     dev: true
 
-  /npm-package-arg/8.1.0:
-    resolution: {integrity: sha512-/ep6QDxBkm9HvOhOg0heitSd7JHA1U7y1qhhlRlteYYAi9Pdb/ZV7FW5aHpkrpM8+P+4p/jjR8zCyKPBMBjSig==}
-    engines: {node: '>=10'}
-    dependencies:
-      hosted-git-info: 3.0.8
-      semver: 7.3.5
-      validate-npm-package-name: 3.0.0
-    dev: true
-
   /npm-package-arg/8.1.5:
     resolution: {integrity: sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==}
     engines: {node: '>=10'}
@@ -2155,14 +2117,6 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-pick-manifest/6.1.0:
-    resolution: {integrity: sha512-ygs4k6f54ZxJXrzT0x34NybRlLeZ4+6nECAIbr2i0foTnijtS1TJiyzpqtuUAJOps/hO0tNDr8fRV5g+BtRlTw==}
-    dependencies:
-      npm-install-checks: 4.0.0
-      npm-package-arg: 8.1.0
-      semver: 7.3.5
-    dev: true
-
   /npm-pick-manifest/6.1.1:
     resolution: {integrity: sha512-dBsdBtORT84S8V8UTad1WlUyKIY9iMsAmqxHbLdeEeBNMLQDlDWWra3wYUx9EBEIiG/YwAy0XyNHDd2goAsfuA==}
     dependencies:
@@ -2181,7 +2135,7 @@ packages:
       minipass-fetch: 1.3.2
       minipass-json-stream: 1.0.1
       minizlib: 2.1.2
-      npm-package-arg: 8.1.0
+      npm-package-arg: 8.1.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2285,15 +2239,15 @@ packages:
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/promise-spawn': 1.3.2
       '@npmcli/run-script': 1.8.3
-      cacache: 15.0.5
+      cacache: 15.2.0
       chownr: 2.0.0
       fs-minipass: 2.1.0
       infer-owner: 1.0.4
       minipass: 3.1.3
       mkdirp: 1.0.4
-      npm-package-arg: 8.1.0
+      npm-package-arg: 8.1.5
       npm-packlist: 2.1.4
-      npm-pick-manifest: 6.1.0
+      npm-pick-manifest: 6.1.1
       npm-registry-fetch: 11.0.0
       promise-retry: 2.0.1
       read-package-json-fast: 2.0.2
@@ -3043,8 +2997,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /tslib/2.3.0:
-    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: false
 
   /tunnel-agent/0.6.0:
@@ -3105,7 +3059,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       boxen: 5.0.0
-      chalk: 4.1.1
+      chalk: 4.1.2
       configstore: 5.0.1
       has-yarn: 2.1.0
       import-lazy: 2.1.0
