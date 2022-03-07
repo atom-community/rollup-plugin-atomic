@@ -6,11 +6,11 @@ importers:
     specifiers:
       '@babel/core': ^7
       '@rollup/plugin-babel': ^5.3.0
-      '@rollup/plugin-commonjs': 20.0.0
+      '@rollup/plugin-commonjs': 21.0.2
       '@rollup/plugin-json': 4.1.0
-      '@rollup/plugin-node-resolve': 13.0.4
-      '@rollup/plugin-replace': ^3.0.0
-      '@rollup/plugin-typescript': 8.2.5
+      '@rollup/plugin-node-resolve': 13.1.3
+      '@rollup/plugin-replace': ^4.0.0
+      '@rollup/plugin-typescript': 8.3.1
       '@rollup/plugin-wasm': ^5.1.2
       array-includes-any: ^2.7.3
       assemblyscript: '*'
@@ -31,11 +31,11 @@ importers:
       typescript: ^4
     dependencies:
       '@rollup/plugin-babel': 5.3.0_@babel+core@7.12.3+rollup@2.42.1
-      '@rollup/plugin-commonjs': 20.0.0_rollup@2.42.1
+      '@rollup/plugin-commonjs': 21.0.2_rollup@2.42.1
       '@rollup/plugin-json': 4.1.0_rollup@2.42.1
-      '@rollup/plugin-node-resolve': 13.0.4_rollup@2.42.1
-      '@rollup/plugin-replace': 3.0.0_rollup@2.42.1
-      '@rollup/plugin-typescript': 8.2.5_b53c90e70346949ca6a519c486064823
+      '@rollup/plugin-node-resolve': 13.1.3_rollup@2.42.1
+      '@rollup/plugin-replace': 4.0.0_rollup@2.42.1
+      '@rollup/plugin-typescript': 8.3.1_b53c90e70346949ca6a519c486064823
       '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
       array-includes-any: 2.7.3
       csso-cli: 3.0.0
@@ -69,6 +69,7 @@ packages:
   /@babel/core/7.12.3:
     resolution: {integrity: sha512-0qXcZYKZp3/6N2jKYVxZv0aNCsxTSVCiK72DTiTYZAu7sjg73W0/aynWjMbiGd87EQL4WyA8reiJVh92AVla9g==}
     engines: {node: '>=6.9.0'}
+    requiresBuild: true
     dependencies:
       '@babel/code-frame': 7.10.4
       '@babel/generator': 7.12.1
@@ -331,8 +332,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-commonjs/20.0.0_rollup@2.42.1:
-    resolution: {integrity: sha512-5K0g5W2Ol8hAcTHqcTBHiA7M58tfmYi1o9KxeJuuRNpGaTa5iLjcyemBitCBcKXaHamOBBEH2dGom6v6Unmqjg==}
+  /@rollup/plugin-commonjs/21.0.2_rollup@2.42.1:
+    resolution: {integrity: sha512-d/OmjaLVO4j/aQX69bwpWPpbvI3TJkQuxoAk7BH8ew1PyoMBLTOuvJTjzG8oEoW7drIIqB0KCJtfFLu/2GClWg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^2.38.3
@@ -356,8 +357,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-node-resolve/13.0.4_rollup@2.42.1:
-    resolution: {integrity: sha512-eYq4TFy40O8hjeDs+sIxEH/jc9lyuI2k9DM557WN6rO5OpnC2qXMBNj4IKH1oHrnAazL49C5p0tgP0/VpqJ+/w==}
+  /@rollup/plugin-node-resolve/13.1.3_rollup@2.42.1:
+    resolution: {integrity: sha512-BdxNk+LtmElRo5d06MGY4zoepyrXX1tkzX2hrnPEZ53k78GuOMWLqmJDGIIOPwVRIFZrLQOo+Yr6KtCuLIA0AQ==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
@@ -371,8 +372,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-replace/3.0.0_rollup@2.42.1:
-    resolution: {integrity: sha512-3c7JCbMuYXM4PbPWT4+m/4Y6U60SgsnDT/cCyAyUKwFHg7pTSfsSQzIpETha3a3ig6OdOKzZz87D9ZXIK3qsDg==}
+  /@rollup/plugin-replace/4.0.0_rollup@2.42.1:
+    resolution: {integrity: sha512-+rumQFiaNac9y64OHtkHGmdjm7us9bo1PlbgQfdihQtuNxzjpaB064HbRnewUOggLQxVCCyINfStkgmBeQpv1g==}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
@@ -381,8 +382,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-typescript/8.2.5_b53c90e70346949ca6a519c486064823:
-    resolution: {integrity: sha512-QL/LvDol/PAGB2O0S7/+q2HpSUNodpw7z6nGn9BfoVCPOZ0r4EALrojFU29Bkoi2Hr2jgTocTejJ5GGWZfOxbQ==}
+  /@rollup/plugin-typescript/8.3.1_b53c90e70346949ca6a519c486064823:
+    resolution: {integrity: sha512-84rExe3ICUBXzqNX48WZV2Jp3OddjTMX97O2Py6D1KJaGSwWp0mDHXj+bCGNJqWHIEKDIT2U0sDjhP4czKi6cA==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0
@@ -592,6 +593,7 @@ packages:
   /assemblyscript/0.18.6:
     resolution: {integrity: sha512-dUj22cradr3Vy17RjF3tLdZspRbDwEmPmDnxXvtpUaToxp+n90JbrtBt2TUP+79AhG+h6Z3GMJge+pkWMB5KFg==}
     hasBin: true
+    requiresBuild: true
     dependencies:
       binaryen: 98.0.0-nightly.20210106
       long: 4.0.0
@@ -855,6 +857,7 @@ packages:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
     engines: {node: '>=0.8.0'}
     hasBin: true
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1060,6 +1063,7 @@ packages:
 
   /encoding/0.1.13:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    requiresBuild: true
     dependencies:
       iconv-lite: 0.6.2
     dev: true
@@ -1210,6 +1214,7 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1217,6 +1222,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -2029,7 +2035,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.8
-      resolve: 1.17.0
+      resolve: 1.19.0
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: false
@@ -2551,6 +2557,7 @@ packages:
     dependencies:
       path-parse: 1.0.6
     dev: false
+    optional: true
 
   /resolve/1.19.0:
     resolution: {integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==}
@@ -2635,7 +2642,7 @@ packages:
     dependencies:
       builtin-modules: 2.0.0
       is-module: 1.0.0
-      resolve: 1.17.0
+      resolve: 1.19.0
     dev: false
 
   /rollup-plugin-sourcemaps/0.6.3_rollup@2.42.1:
@@ -3026,6 +3033,7 @@ packages:
     resolution: {integrity: sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    requiresBuild: true
     dev: false
     optional: true
 
