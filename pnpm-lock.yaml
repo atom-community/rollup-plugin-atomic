@@ -6,11 +6,11 @@ importers:
     specifiers:
       '@babel/core': ^7
       '@rollup/plugin-babel': ^5.3.1
-      '@rollup/plugin-commonjs': 21.0.2
+      '@rollup/plugin-commonjs': 21.1.0
       '@rollup/plugin-json': 4.1.0
-      '@rollup/plugin-node-resolve': 13.1.3
+      '@rollup/plugin-node-resolve': 13.2.1
       '@rollup/plugin-replace': ^4.0.0
-      '@rollup/plugin-typescript': 8.3.1
+      '@rollup/plugin-typescript': 8.3.2
       '@rollup/plugin-wasm': ^5.1.2
       array-includes-any: ^2.7.3
       assemblyscript: '*'
@@ -31,11 +31,11 @@ importers:
       typescript: ^4
     dependencies:
       '@rollup/plugin-babel': 5.3.1_@babel+core@7.12.3+rollup@2.42.1
-      '@rollup/plugin-commonjs': 21.0.2_rollup@2.42.1
+      '@rollup/plugin-commonjs': 21.1.0_rollup@2.42.1
       '@rollup/plugin-json': 4.1.0_rollup@2.42.1
-      '@rollup/plugin-node-resolve': 13.1.3_rollup@2.42.1
+      '@rollup/plugin-node-resolve': 13.2.1_rollup@2.42.1
       '@rollup/plugin-replace': 4.0.0_rollup@2.42.1
-      '@rollup/plugin-typescript': 8.3.1_b53c90e70346949ca6a519c486064823
+      '@rollup/plugin-typescript': 8.3.2_b53c90e70346949ca6a519c486064823
       '@rollup/plugin-wasm': 5.1.2_rollup@2.42.1
       array-includes-any: 2.7.3
       csso-cli: 3.0.0
@@ -355,8 +355,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-commonjs/21.0.2_rollup@2.42.1:
-    resolution: {integrity: sha512-d/OmjaLVO4j/aQX69bwpWPpbvI3TJkQuxoAk7BH8ew1PyoMBLTOuvJTjzG8oEoW7drIIqB0KCJtfFLu/2GClWg==}
+  /@rollup/plugin-commonjs/21.1.0_rollup@2.42.1:
+    resolution: {integrity: sha512-6ZtHx3VHIp2ReNNDxHjuUml6ur+WcQ28N1yHgCQwsbNkQg2suhxGMDQGJOn/KuDxKtd1xuZP5xSTwBA4GQ8hbA==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       rollup: ^2.38.3
@@ -364,7 +364,7 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.42.1
       commondir: 1.0.1
       estree-walker: 2.0.1
-      glob: 7.1.6
+      glob: 7.2.0
       is-reference: 1.2.1
       magic-string: 0.25.7
       resolve: 1.19.0
@@ -380,8 +380,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-node-resolve/13.1.3_rollup@2.42.1:
-    resolution: {integrity: sha512-BdxNk+LtmElRo5d06MGY4zoepyrXX1tkzX2hrnPEZ53k78GuOMWLqmJDGIIOPwVRIFZrLQOo+Yr6KtCuLIA0AQ==}
+  /@rollup/plugin-node-resolve/13.2.1_rollup@2.42.1:
+    resolution: {integrity: sha512-btX7kzGvp1JwShQI9V6IM841YKNPYjKCvUbNrQ2EcVYbULtUd/GH6wZ/qdqH13j9pOHBER+EZXNN2L8RSJhVRA==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^2.42.0
@@ -405,8 +405,8 @@ packages:
       rollup: 2.42.1
     dev: false
 
-  /@rollup/plugin-typescript/8.3.1_b53c90e70346949ca6a519c486064823:
-    resolution: {integrity: sha512-84rExe3ICUBXzqNX48WZV2Jp3OddjTMX97O2Py6D1KJaGSwWp0mDHXj+bCGNJqWHIEKDIT2U0sDjhP4czKi6cA==}
+  /@rollup/plugin-typescript/8.3.2_b53c90e70346949ca6a519c486064823:
+    resolution: {integrity: sha512-MtgyR5LNHZr3GyN0tM7gNO9D0CS+Y+vflS4v/PHmrX17JCkHUYKvQ5jN5o3cz1YKllM3duXUqu3yOHwMPUxhDg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       rollup: ^2.14.0
@@ -1274,17 +1274,6 @@ packages:
     dependencies:
       is-glob: 4.0.1
 
-  /glob/7.1.6:
-    resolution: {integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==}
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 3.0.4
-      once: 1.4.0
-      path-is-absolute: 1.0.1
-    dev: false
-
   /glob/7.2.0:
     resolution: {integrity: sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==}
     dependencies:
@@ -1294,7 +1283,6 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: true
 
   /global-dirs/3.0.0:
     resolution: {integrity: sha512-v8ho2DS5RiCjftj1nD9NmnfaOzTdud7RRnVd9kFNOjqZbISlx5DQ+OrTkywgd0dIt7oFCvKetZSHoHcP3sDdiA==}
@@ -1999,7 +1987,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.8
-      resolve: 1.17.0
+      resolve: 1.19.0
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: false
@@ -2500,6 +2488,7 @@ packages:
     dependencies:
       path-parse: 1.0.6
     dev: false
+    optional: true
 
   /resolve/1.19.0:
     resolution: {integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==}
@@ -2584,7 +2573,7 @@ packages:
     dependencies:
       builtin-modules: 2.0.0
       is-module: 1.0.0
-      resolve: 1.17.0
+      resolve: 1.19.0
     dev: false
 
   /rollup-plugin-sourcemaps/0.6.3_rollup@2.42.1:
