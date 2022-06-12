@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "assemblyscript": "*",
-    "npm-check-updates": "13.1.3",
+    "npm-check-updates": "13.1.4",
     "prettier-config-atomic": "^3.0.6",
     "typescript": "^4.2.3"
   },
