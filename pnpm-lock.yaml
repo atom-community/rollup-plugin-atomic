@@ -16,7 +16,7 @@ importers:
       assemblyscript: '*'
       coffeescript: ^1 || ^2
       csso-cli: ^3.0.0
-      npm-check-updates: 16.0.0
+      npm-check-updates: 16.0.3
       prettier-config-atomic: ^3.0.6
       rollup: ^2
       rollup-plugin-assemblyscript: ^2.0.0
@@ -55,7 +55,7 @@ importers:
       coffeescript: 1.12.7
       typescript: 4.0.3
     devDependencies:
-      npm-check-updates: 16.0.0
+      npm-check-updates: 16.0.3
       prettier-config-atomic: 3.0.6
 
 packages:
@@ -972,8 +972,8 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: false
 
-  /commander/9.3.0:
-    resolution: {integrity: sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==}
+  /commander/9.4.0:
+    resolution: {integrity: sha512-sRPT+umqkz90UA8M1yqYfnHlZA7fF6nSphDtxeywPZ49ysjxDQybzk13CL+mXekDRG92skbcqCLVovuCusNmFw==}
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
@@ -2090,14 +2090,14 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/16.0.0:
-    resolution: {integrity: sha512-l1PSWEQ51Zhq54LVMbvWcBDIKTqLLE0Bj40mP0z85mHR7wUJYRN1C+pndPu5qW3ay0h5466zZGc3E+o7wtJ2gA==}
+  /npm-check-updates/16.0.3:
+    resolution: {integrity: sha512-oTCQ/USrDBruVOIRrnpxk4oW4H1mIJfcSta2/ffslKv6kqv4C22hP+ltZoRGu+1nhZ5dsDb/B8CoVyD27/Wm8w==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
       chalk: 5.0.1
       cli-table: 0.3.11
-      commander: 9.3.0
+      commander: 9.4.0
       fast-memoize: 2.5.2
       find-up: 5.0.0
       fp-and-or: 0.1.3
