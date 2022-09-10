@@ -16,7 +16,7 @@ importers:
       assemblyscript: '*'
       coffeescript: ^1 || ^2
       csso-cli: ^4.0.0
-      npm-check-updates: 16.1.1
+      npm-check-updates: 16.1.2
       prettier-config-atomic: ^3.0.6
       rollup: ^2
       rollup-plugin-assemblyscript: ^2.0.0
@@ -55,7 +55,7 @@ importers:
       coffeescript: 1.12.7
       typescript: 4.0.3
     devDependencies:
-      npm-check-updates: 16.1.1
+      npm-check-updates: 16.1.2
       prettier-config-atomic: 3.0.6
 
 packages:
@@ -2058,8 +2058,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/16.1.1:
-    resolution: {integrity: sha512-wdqqq/715pZa15QVNU1HpzNpz3kaXV9hEOP/p1v2dddzinsbOrGaxC7WHck1IKXDK9IN0ZIgx9AW3sPGiNpROQ==}
+  /npm-check-updates/16.1.2:
+    resolution: {integrity: sha512-6ZnDkrGkQQ+tnCeMXIO7sxdTWwXiodzO02sOtyZzj9HbJqAf4qY0wdmTEkG7wBNggwlIksVxgyjCzSejMdv6qg==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
