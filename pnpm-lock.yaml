@@ -16,7 +16,7 @@ importers:
       assemblyscript: '*'
       coffeescript: ^1 || ^2
       csso-cli: ^4.0.0
-      npm-check-updates: 16.1.2
+      npm-check-updates: 16.1.3
       prettier-config-atomic: ^3.0.6
       rollup: ^2
       rollup-plugin-assemblyscript: ^2.0.0
@@ -55,7 +55,7 @@ importers:
       coffeescript: 1.12.7
       typescript: 4.0.3
     devDependencies:
-      npm-check-updates: 16.1.2
+      npm-check-updates: 16.1.3
       prettier-config-atomic: 3.0.6
 
 packages:
@@ -2058,8 +2058,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/16.1.2:
-    resolution: {integrity: sha512-6ZnDkrGkQQ+tnCeMXIO7sxdTWwXiodzO02sOtyZzj9HbJqAf4qY0wdmTEkG7wBNggwlIksVxgyjCzSejMdv6qg==}
+  /npm-check-updates/16.1.3:
+    resolution: {integrity: sha512-cjFV+Mb5I5rZWVElJugp1cArdzlHQy6Tzi+1i6T72nzLNFN10x7OjA7iQXgFpqeN+U5Zwv8u0/XVCEWM9KxqhQ==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -2088,6 +2088,7 @@ packages:
       semver-utils: 1.1.4
       source-map-support: 0.5.21
       spawn-please: 1.0.0
+      untildify: 4.0.0
       update-notifier: 6.0.2
       yaml: 2.1.1
     transitivePeerDependencies:
@@ -2996,6 +2997,11 @@ packages:
     resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
     dependencies:
       '@types/unist': 2.0.3
+    dev: true
+
+  /untildify/4.0.0:
+    resolution: {integrity: sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==}
+    engines: {node: '>=8'}
     dev: true
 
   /update-notifier/6.0.2:
