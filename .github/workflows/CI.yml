@@ -22,7 +22,7 @@ jobs:
         atom_channel: [stable, beta]
     steps:
       - uses: actions/checkout@v4
-      - uses: UziTech/action-setup-atom@v1
+      - uses: UziTech/action-setup-atom@v3.0.8
         with:
           channel: ${{ matrix.atom_channel }}
       - name: Versions
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: UziTech/action-setup-atom@v1
+      - uses: UziTech/action-setup-atom@v3.0.8
       - uses: actions/setup-node@v3
         with:
           node-version: "14.x"
