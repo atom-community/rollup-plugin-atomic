@@ -66,7 +66,7 @@ jobs:
       - name: NPM install
         run: npm install
       - name: Release 🎉
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v6.0.0
         with:
           extra_plugins: |
             @semantic-release/changelog
