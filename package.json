@@ -50,7 +50,7 @@
     "rollup": "^2"
   },
   "optionalDependencies": {
-    "@babel/core": "^7",
+    "@babel/core": "^8.0.0",
     "assemblyscript": "*",
     "coffeescript": "^1 || ^2",
     "typescript": "^4"
